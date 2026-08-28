@@ -5,43 +5,46 @@
 
 :root {
   /* Paper palette: dark paper, ivory ink, one signal red. */
-  --paper:        #0a0c10;
-  --paper-edge:   #11141b;
-  --rule:         #1d2129;
-  --rule-strong:  #2a2f3a;
-  --ink:          #e8e3d6;
-  --ink-soft:     #b8b3a6;
-  --ink-faint:    #7a786e;
-  --ink-ghost:    #4a4942;
+  --paper: #0a0c10;
+  --paper-edge: #11141b;
+  --rule: #1d2129;
+  --rule-strong: #2a2f3a;
+  --ink: #e8e3d6;
+  --ink-soft: #b8b3a6;
+  --ink-faint: #7a786e;
+  --ink-ghost: #4a4942;
 
   /* The only color on the page that isn't paper or ink. */
-  --signal:       #ff5b3e;
-  --signal-soft:  #2a1612;
+  --signal: #ff5b3e;
+  --signal-soft: #2a1612;
 
   /* Type: Plex Serif for the paper; Plex Mono for measurement; Plex Sans for UI. */
   --serif: "IBM Plex Serif", "Iowan Old Style", "Charter", "Source Serif Pro", Georgia, serif;
-  --sans:  "IBM Plex Sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:  "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
+  --sans: "IBM Plex Sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
 
   /* Vertical rhythm. One line at body is 1.55; sections are 4-line multiples. */
-  --lh-tight:  1.18;
-  --lh-snug:   1.32;
-  --lh-body:   1.55;
-  --lh-loose:  1.7;
+  --lh-tight: 1.18;
+  --lh-snug: 1.32;
+  --lh-body: 1.55;
+  --lh-loose: 1.7;
 
   /* Measure. The paper is one column.  */
-  --col:       72ch;
-  --col-wide:  88ch;
-  --gutter:    1.5rem;
+  --col: 72ch;
+  --col-wide: 88ch;
+  --gutter: 1.5rem;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 *:focus-visible {
   outline: 1.5px solid var(--ink);
   outline-offset: 3px;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
@@ -54,11 +57,19 @@ html, body {
 }
 
 @media (max-width: 760px) {
-  html, body { font-size: 16px; }
+  html,
+  body {
+    font-size: 16px;
+  }
 }
 
-.mono { font-family: var(--mono); font-feature-settings: "tnum", "zero"; }
-.nowrap { white-space: nowrap; }
+.mono {
+  font-family: var(--mono);
+  font-feature-settings: "tnum", "zero";
+}
+.nowrap {
+  white-space: nowrap;
+}
 
 /* --------------------------------------------------------------------
    The paper itself — one column, no full-bleed, no card grid.
@@ -70,7 +81,9 @@ html, body {
 }
 
 @media (max-width: 760px) {
-  .paper { padding: 2.5rem 1.25rem 4rem; }
+  .paper {
+    padding: 2.5rem 1.25rem 4rem;
+  }
 }
 
 /* --------------------------------------------------------------------
@@ -107,8 +120,12 @@ html, body {
   color: var(--ink);
   font-weight: 500;
 }
-.kicker-sep { color: var(--ink-ghost); }
-.kicker-meta { color: var(--ink-faint); }
+.kicker-sep {
+  color: var(--ink-ghost);
+}
+.kicker-meta {
+  color: var(--ink-faint);
+}
 
 .title {
   margin: 0 0 1.5rem;
@@ -147,15 +164,28 @@ html, body {
 }
 
 @media (max-width: 760px) {
-  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.meta { padding: 0.4rem 1rem 0.4rem 0; border-right: 1px solid var(--rule); }
-.meta:last-child { border-right: 0; }
-.meta:nth-child(2n) { border-right: 0; }
+.meta {
+  padding: 0.4rem 1rem 0.4rem 0;
+  border-right: 1px solid var(--rule);
+}
+.meta:last-child {
+  border-right: 0;
+}
+.meta:nth-child(2n) {
+  border-right: 0;
+}
 @media (min-width: 761px) {
-  .meta:nth-child(2n) { border-right: 1px solid var(--rule); }
-  .meta:nth-child(4) { border-right: 0; }
+  .meta:nth-child(2n) {
+    border-right: 1px solid var(--rule);
+  }
+  .meta:nth-child(4) {
+    border-right: 0;
+  }
 }
 
 .meta dt {
@@ -212,7 +242,9 @@ html, body {
   text-decoration: none;
   border-bottom: 1px solid var(--rule-strong);
 }
-.provenance a:hover { border-bottom-color: var(--ink); }
+.provenance a:hover {
+  border-bottom-color: var(--ink);
+}
 
 /* --------------------------------------------------------------------
    Sections — each numbered with a Roman numeral, not a card.
@@ -310,9 +342,17 @@ html, body {
   font-feature-settings: "tnum";
   transition: border-color 120ms ease;
 }
-#source:hover { border-color: var(--ink-faint); }
-#source:focus { border-color: var(--ink); outline: none; }
-#source option { background: var(--paper-edge); color: var(--ink); }
+#source:hover {
+  border-color: var(--ink-faint);
+}
+#source:focus {
+  border-color: var(--ink);
+  outline: none;
+}
+#source option {
+  background: var(--paper-edge);
+  color: var(--ink);
+}
 
 .picker-arrow {
   position: absolute;
@@ -345,7 +385,9 @@ html, body {
 }
 
 @media (max-width: 760px) {
-  .mech-stack { grid-template-columns: 1fr; }
+  .mech-stack {
+    grid-template-columns: 1fr;
+  }
 }
 
 .mech-step {
@@ -358,11 +400,20 @@ html, body {
   padding-right: 0;
 }
 @media (max-width: 760px) {
-  .mech-step { border-right: 0; border-bottom: 1px solid var(--rule); padding: 1.4rem 0; }
-  .mech-step:last-child { border-bottom: 0; padding-left: 0; }
+  .mech-step {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 1.4rem 0;
+  }
+  .mech-step:last-child {
+    border-bottom: 0;
+    padding-left: 0;
+  }
 }
 
-.mech-step header { margin-bottom: 1rem; }
+.mech-step header {
+  margin-bottom: 1rem;
+}
 
 .mech-tag {
   display: inline-block;
@@ -390,7 +441,13 @@ html, body {
   color: var(--ink);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  background: linear-gradient(to right, transparent, var(--paper-edge) 12%, var(--paper-edge) 88%, transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--paper-edge) 12%,
+    var(--paper-edge) 88%,
+    transparent
+  );
   text-align: center;
   letter-spacing: 0.01em;
 }
@@ -413,13 +470,14 @@ html, body {
   color: var(--ink-faint);
 }
 
-.mech-anti .mono { color: var(--ink-soft); font-style: normal; }
+.mech-anti .mono {
+  color: var(--ink-soft);
+  font-style: normal;
+}
 
 /* --------------------------------------------------------------------
    § III — Recommendations / typed list
    -------------------------------------------------------------------- */
-.recs-body { }
-
 .rec-list {
   list-style: none;
   counter-reset: rec;
@@ -438,8 +496,12 @@ html, body {
   cursor: pointer;
   transition: background-color 120ms ease;
 }
-.rec-list li:hover { background: var(--paper-edge); }
-.rec-list li.is-selected { background: var(--paper-edge); }
+.rec-list li:hover {
+  background: var(--paper-edge);
+}
+.rec-list li.is-selected {
+  background: var(--paper-edge);
+}
 
 .rec-list li::before {
   content: counter(rec, decimal-leading-zero);
@@ -491,9 +553,15 @@ html, body {
   align-items: baseline;
 }
 
-.rec-meta .num { color: var(--ink); }
-.rec-meta .delta-pos { color: var(--ink); }
-.rec-meta .delta-neg { color: var(--ink-faint); }
+.rec-meta .num {
+  color: var(--ink);
+}
+.rec-meta .delta-pos {
+  color: var(--ink);
+}
+.rec-meta .delta-neg {
+  color: var(--ink-faint);
+}
 
 .rec-detail {
   display: none;
@@ -506,7 +574,9 @@ html, body {
   line-height: var(--lh-body);
 }
 
-.rec-list li.is-selected .rec-detail { display: block; }
+.rec-list li.is-selected .rec-detail {
+  display: block;
+}
 
 .rec-hop {
   display: grid;
@@ -517,7 +587,9 @@ html, body {
   font-family: var(--serif);
 }
 
-.rec-hop:last-child { margin-bottom: 0; }
+.rec-hop:last-child {
+  margin-bottom: 0;
+}
 
 .rec-hop .hop-route {
   font-family: var(--mono);
@@ -527,7 +599,10 @@ html, body {
   white-space: nowrap;
 }
 
-.rec-hop .hop-route .arrow { color: var(--ink-faint); padding: 0 0.3rem; }
+.rec-hop .hop-route .arrow {
+  color: var(--ink-faint);
+  padding: 0 0.3rem;
+}
 
 .rec-hop .hop-skills {
   display: inline;
@@ -566,8 +641,14 @@ html, body {
   line-height: 1.7;
 }
 
-.rec-formula b { color: var(--ink); font-weight: 500; }
-.rec-formula .label { color: var(--ink-faint); padding-right: 0.3rem; }
+.rec-formula b {
+  color: var(--ink);
+  font-weight: 500;
+}
+.rec-formula .label {
+  color: var(--ink-faint);
+  padding-right: 0.3rem;
+}
 
 .rec-empty {
   padding: 1.5rem 0;
@@ -580,8 +661,6 @@ html, body {
 /* --------------------------------------------------------------------
    § IV — Wage radar (canvas) + caption
    -------------------------------------------------------------------- */
-.radar-body { }
-
 .radar-figure {
   margin: 0;
   padding: 0;
@@ -604,7 +683,9 @@ html, body {
   letter-spacing: 0.01em;
 }
 
-.radar-caption .underpaid { color: var(--signal); }
+.radar-caption .underpaid {
+  color: var(--signal);
+}
 
 /* Hidden but accessible text table for the radar data (screen readers). */
 .radar-table {
@@ -649,10 +730,14 @@ html, body {
 }
 
 @media (max-width: 760px) {
-  .appendix-grid { grid-template-columns: 1fr; }
+  .appendix-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.appendix-grid > div { padding: 0 0 0.5rem; }
+.appendix-grid > div {
+  padding: 0 0 0.5rem;
+}
 
 .appendix-h3 {
   margin: 0 0 0.7rem;
@@ -697,7 +782,9 @@ html, body {
    Reduced-motion guard.
    -------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }

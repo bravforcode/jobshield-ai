@@ -144,9 +144,9 @@ function renderSourceMeta(code: string): void {
 function renderRecommendations(recs: Recommendation[]): void {
   recsEl.innerHTML = "";
   if (recs.length === 0) {
-    const li = document.createElement("li");
-    li.innerHTML = `<div class="rec-empty">No reachable targets in the graph from this starting occupation.</div>`;
-    recsEl.appendChild(li);
+    const empty = document.createElement("li");
+    empty.innerHTML = `<div class="rec-empty">No reachable targets in the graph from this starting occupation.</div>`;
+    recsEl.appendChild(empty);
     return;
   }
 
@@ -189,8 +189,7 @@ function renderRecommendations(recs: Recommendation[]): void {
     detail.className = "rec-detail";
     detail.id = detailId;
 
-    for (let i = 0; i < r.path_explanation.length; i++) {
-      const hop = r.path_explanation[i]!;
+    for (const hop of r.path_explanation) {
       const hopEl = document.createElement("div");
       hopEl.className = "rec-hop";
 
@@ -215,7 +214,8 @@ function renderRecommendations(recs: Recommendation[]): void {
       } else {
         const note = document.createElement("span");
         note.className = "hop-bridge";
-        note.textContent = "no direct skill overlap; bridge runs through PPMI co-occurrence in the skill graph";
+        note.textContent =
+          "no direct skill overlap; bridge runs through PPMI co-occurrence in the skill graph";
         skills.appendChild(note);
       }
 
@@ -240,8 +240,11 @@ function renderRecommendations(recs: Recommendation[]): void {
 
   // If no selection yet, open the first card by default.
   if (!selectedTarget && recs.length > 0) {
-    selectedTarget = recs[0]!.target;
-    recsEl.firstElementChild?.classList.add("is-selected");
+    const first = recs[0];
+    if (first) {
+      selectedTarget = first.target;
+      recsEl.firstElementChild?.classList.add("is-selected");
+    }
   }
 
   // Click on a row toggles its selection.
@@ -254,7 +257,7 @@ function onRecClick(ev: Event): void {
   const target = li.dataset.target;
   if (!target) return;
   selectedTarget = target;
-  for (const el of recsEl.querySelectorAll("li")) el.classList.remove("is-selected");
+  for (const el of Array.from(recsEl.querySelectorAll("li"))) el.classList.remove("is-selected");
   li.classList.add("is-selected");
 }
 
@@ -302,8 +305,7 @@ function renderRadar(): void {
 
   if (radarRows.length === 0) {
     ctx.fillStyle = "#7a786e";
-    ctx.font = '14px "IBM Plex Serif", Georgia, serif';
-    ctx.fontStyle = "italic";
+    ctx.font = 'italic 14px "IBM Plex Serif", Georgia, serif';
     ctx.fillText("No wage radar data.", 24, 32);
     return;
   }
@@ -348,9 +350,8 @@ function renderRadar(): void {
   }
 
   // Axis labels.
+  ctx.font = 'italic 12px "IBM Plex Serif", Georgia, serif';
   ctx.fillStyle = "#b8b3a6";
-  ctx.font = '12px "IBM Plex Serif", Georgia, serif';
-  ctx.fontStyle = "italic";
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
   ctx.fillText("degree centrality (x)", pad.l + plotW / 2, pad.t + plotH + 20);
@@ -360,8 +361,8 @@ function renderRadar(): void {
   ctx.textAlign = "center";
   ctx.fillText("median wage (y)", 0, 0);
   ctx.restore();
-  ctx.fontStyle = "normal";
   ctx.font = '11px "IBM Plex Mono", monospace';
+  ctx.fillStyle = "#7a786e";
 
   // OLS fit line. Y on wage, X on centrality. Single-feature regression
   // computed in JS so it matches the server-side math.
@@ -402,9 +403,7 @@ function renderRadar(): void {
   }
 
   // Code labels at the top performers (highest degree centrality).
-  const top = [...radarRows]
-    .sort((a, b) => b.centrality - a.centrality)
-    .slice(0, 3);
+  const top = [...radarRows].sort((a, b) => b.centrality - a.centrality).slice(0, 3);
   ctx.fillStyle = "#7a786e";
   ctx.font = '10px "IBM Plex Mono", monospace';
   ctx.textAlign = "left";
@@ -464,14 +463,17 @@ function clamp(v: number, lo: number, hi: number): number {
 
 function ols(xs: number[], ys: number[]): { slope: number; intercept: number } {
   const n = xs.length;
-  if (n < 2) return { slope: 0, intercept: n > 0 ? ys[0]! : 0 };
+  if (n < 2) {
+    return { slope: 0, intercept: n > 0 ? (ys[0] ?? 0) : 0 };
+  }
   const meanX = xs.reduce((a, b) => a + b, 0) / n;
   const meanY = ys.reduce((a, b) => a + b, 0) / n;
-  let sxx = 0, sxy = 0;
+  let sxx = 0;
+  let sxy = 0;
   for (let i = 0; i < n; i++) {
-    const dx = xs[i]! - meanX;
+    const dx = (xs[i] ?? 0) - meanX;
     sxx += dx * dx;
-    sxy += dx * (ys[i]! - meanY);
+    sxy += dx * ((ys[i] ?? 0) - meanY);
   }
   if (sxx === 0) return { slope: 0, intercept: meanY };
   const slope = sxy / sxx;
@@ -502,18 +504,14 @@ function renderRadarTable(): void {
     table.className = "radar-table";
     document.body.appendChild(table);
   }
-  table.innerHTML =
-    `<caption>Wage radar data, sorted by centrality</caption>` +
-    `<thead><tr><th>Code</th><th>Centrality</th><th>Median wage (THB)</th><th>Gap vs model</th></tr></thead>` +
-    `<tbody>` +
-    [...radarRows]
-      .sort((a, b) => b.centrality - a.centrality)
-      .map(
-        (r) =>
-          `<tr><td>${r.occ}</td><td>${r.centrality.toFixed(3)}</td><td>${THB.format(r.wage)}</td><td>${(r.gap_ratio * 100).toFixed(1)}%</td></tr>`,
-      )
-      .join("") +
-    `</tbody>`;
+  const rows = [...radarRows]
+    .sort((a, b) => b.centrality - a.centrality)
+    .map(
+      (r) =>
+        `<tr><td>${r.occ}</td><td>${r.centrality.toFixed(3)}</td><td>${THB.format(r.wage)}</td><td>${(r.gap_ratio * 100).toFixed(1)}%</td></tr>`,
+    )
+    .join("");
+  table.innerHTML = `<caption>Wage radar data, sorted by centrality</caption><thead><tr><th>Code</th><th>Centrality</th><th>Median wage (THB)</th><th>Gap vs model</th></tr></thead><tbody>${rows}</tbody>`;
 }
 
 // ----------------------------- Lifecycle ---------------------------------

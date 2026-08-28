@@ -4,10 +4,14 @@
 
 import { handleRequest } from "../ts/api/src/server.js";
 
-export default async function handler(req: Request, res?: unknown): Promise<Response | void> {
+export default async function handler(req: Request, res?: unknown): Promise<Response | undefined> {
   // Node-style: (req: IncomingMessage, res: ServerResponse)
   if (res && typeof (res as { statusCode?: unknown }).statusCode !== "undefined") {
-    const nodeReq = req as unknown as { url?: string; method?: string; headers: Record<string, string | string[] | undefined> };
+    const nodeReq = req as unknown as {
+      url?: string;
+      method?: string;
+      headers: Record<string, string | string[] | undefined>;
+    };
     const nodeRes = res as unknown as {
       statusCode: number;
       setHeader: (k: string, v: string) => void;
