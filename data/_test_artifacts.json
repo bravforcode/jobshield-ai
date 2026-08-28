@@ -51,8 +51,8 @@
     "freq": {
       "communication": 54,
       "customer_service": 23,
-      "thai": 19,
       "english": 43,
+      "thai": 19,
       "teamwork": 21,
       "problem_solving": 21,
       "telemarketing": 1,
@@ -60,21 +60,21 @@
       "excel": 53,
       "sales": 11,
       "data_analysis": 17,
-      "plc": 4,
-      "manufacturing": 16,
       "electrical": 5,
       "cnc": 5,
+      "plc": 4,
+      "manufacturing": 16,
       "qa_testing": 11,
-      "lean": 8,
       "mechanical": 3,
-      "six_sigma": 6,
+      "lean": 8,
       "quality_control": 12,
       "autocad": 2,
+      "six_sigma": 6,
       "cashier": 10,
       "pos_system": 11,
       "data_entry": 18,
-      "accounting": 17,
       "bookkeeping": 17,
+      "accounting": 17,
       "sql": 9,
       "data_visualization": 9,
       "python": 8,
@@ -83,16 +83,16 @@
       "payroll": 14,
       "quickbooks": 4,
       "marketing": 18,
+      "social_media": 22,
       "seo": 25,
       "content_writing": 22,
-      "social_media": 22,
       "copywriting": 21,
       "recruitment": 18,
-      "hr": 18,
       "interviewing": 9,
+      "hr": 18,
       "warehouse": 16,
-      "forklift": 8,
       "inventory": 16,
+      "forklift": 8,
       "logistics": 15,
       "translation": 9
     },
@@ -1184,7 +1184,7 @@
       {
         "source": "occ.call_center_agent",
         "target": "occ.marketing_coordinator",
-        "skill_distance": 0.6924721133553203,
+        "skill_distance": 0.6924721133553202,
         "shared_skills": [
           "communication",
           "english"
@@ -1193,7 +1193,7 @@
       {
         "source": "occ.marketing_coordinator",
         "target": "occ.call_center_agent",
-        "skill_distance": 0.6924721133553203,
+        "skill_distance": 0.6924721133553202,
         "shared_skills": [
           "communication",
           "english"
@@ -2186,7 +2186,7 @@
       {
         "source": "occ.retail_sales_assistant",
         "target": "occ.hr_generalist",
-        "skill_distance": 0.4275968802933545,
+        "skill_distance": 0.4275968802933544,
         "shared_skills": [
           "communication",
           "english",
@@ -2196,7 +2196,7 @@
       {
         "source": "occ.hr_generalist",
         "target": "occ.retail_sales_assistant",
-        "skill_distance": 0.4275968802933545,
+        "skill_distance": 0.4275968802933544,
         "shared_skills": [
           "communication",
           "english",
@@ -2566,7 +2566,7 @@
       {
         "source": "occ.junior_data_analyst",
         "target": "occ.bookkeeper",
-        "skill_distance": 0.12979681309194935,
+        "skill_distance": 0.12979681309194946,
         "shared_skills": [
           "excel",
           "english",
@@ -2577,7 +2577,7 @@
       {
         "source": "occ.bookkeeper",
         "target": "occ.junior_data_analyst",
-        "skill_distance": 0.12979681309194935,
+        "skill_distance": 0.12979681309194946,
         "shared_skills": [
           "excel",
           "english",
@@ -2718,7 +2718,7 @@
       {
         "source": "occ.junior_data_analyst",
         "target": "occ.content_writer",
-        "skill_distance": 0.42662449180906237,
+        "skill_distance": 0.42662449180906226,
         "shared_skills": [
           "english",
           "communication",
@@ -2729,7 +2729,7 @@
       {
         "source": "occ.content_writer",
         "target": "occ.junior_data_analyst",
-        "skill_distance": 0.42662449180906237,
+        "skill_distance": 0.42662449180906226,
         "shared_skills": [
           "english",
           "communication",
@@ -2916,7 +2916,7 @@
       {
         "source": "occ.bookkeeper",
         "target": "occ.marketing_coordinator",
-        "skill_distance": 0.6671696088944675,
+        "skill_distance": 0.6671696088944674,
         "shared_skills": [
           "excel",
           "english",
@@ -2926,7 +2926,7 @@
       {
         "source": "occ.marketing_coordinator",
         "target": "occ.bookkeeper",
-        "skill_distance": 0.6671696088944675,
+        "skill_distance": 0.6671696088944674,
         "shared_skills": [
           "excel",
           "english",
@@ -2956,7 +2956,7 @@
       {
         "source": "occ.bookkeeper",
         "target": "occ.recruiter",
-        "skill_distance": 0.5945984942450565,
+        "skill_distance": 0.5945984942450564,
         "shared_skills": [
           "excel",
           "english",
@@ -2968,7 +2968,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.bookkeeper",
-        "skill_distance": 0.5945984942450565,
+        "skill_distance": 0.5945984942450564,
         "shared_skills": [
           "excel",
           "english",
@@ -3390,7 +3390,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.translator",
-        "skill_distance": 0.2857088635270014,
+        "skill_distance": 0.28570886352700153,
         "shared_skills": [
           "english",
           "communication",
@@ -3402,7 +3402,7 @@
       {
         "source": "occ.translator",
         "target": "occ.recruiter",
-        "skill_distance": 0.2857088635270014,
+        "skill_distance": 0.28570886352700153,
         "shared_skills": [
           "english",
           "communication",
@@ -3414,7 +3414,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.content_writer",
-        "skill_distance": 0.541033212758007,
+        "skill_distance": 0.5410332127580069,
         "shared_skills": [
           "english",
           "communication",
@@ -3425,7 +3425,7 @@
       {
         "source": "occ.content_writer",
         "target": "occ.recruiter",
-        "skill_distance": 0.541033212758007,
+        "skill_distance": 0.5410332127580069,
         "shared_skills": [
           "english",
           "communication",
@@ -3482,7 +3482,7 @@
       {
         "source": "occ.hr_generalist",
         "target": "occ.translator",
-        "skill_distance": 0.42456408050654537,
+        "skill_distance": 0.4245640805065455,
         "shared_skills": [
           "english",
           "communication",
@@ -3494,7 +3494,7 @@
       {
         "source": "occ.translator",
         "target": "occ.hr_generalist",
-        "skill_distance": 0.42456408050654537,
+        "skill_distance": 0.4245640805065455,
         "shared_skills": [
           "english",
           "communication",
@@ -3645,44 +3645,44 @@
   },
   "centrality": {
     "degree": {
-      "occ.junior_data_analyst": 0.875,
-      "occ.bookkeeper": 0.8125,
-      "occ.hr_generalist": 1.0,
-      "occ.translator": 0.9375,
-      "occ.customer_success": 1.0,
-      "occ.cashier": 0.625,
-      "occ.call_center_agent": 0.9375,
-      "occ.recruiter": 1.0,
-      "occ.qa_quality_control": 0.6875,
       "occ.logistics_coordinator": 0.9375,
-      "occ.content_writer": 0.875,
-      "occ.warehouse_worker": 0.5625,
-      "occ.retail_sales_assistant": 0.875,
+      "occ.bookkeeper": 0.8125,
+      "occ.recruiter": 1.0,
+      "occ.translator": 0.9375,
       "occ.marketing_coordinator": 0.9375,
-      "occ.factory_technician": 0.0625,
+      "occ.content_writer": 0.875,
+      "occ.retail_sales_assistant": 0.875,
       "occ.digital_marketer": 0.875,
+      "occ.factory_technician": 0.0625,
+      "occ.call_center_agent": 0.9375,
+      "occ.cashier": 0.625,
+      "occ.qa_quality_control": 0.6875,
+      "occ.accounting_clerk": 0.875,
+      "occ.customer_success": 1.0,
+      "occ.junior_data_analyst": 0.875,
+      "occ.hr_generalist": 1.0,
       "occ.data_entry": 1.0,
-      "occ.accounting_clerk": 0.875
+      "occ.warehouse_worker": 0.5625
     },
     "betweenness": {
-      "occ.junior_data_analyst": 0.056597222222222215,
+      "occ.logistics_coordinator": 0.12785218253968256,
       "occ.bookkeeper": 0.037500000000000006,
-      "occ.hr_generalist": 0.18774801587301582,
-      "occ.translator": 0.086359126984127,
-      "occ.customer_success": 0.18774801587301582,
-      "occ.cashier": 0.013888888888888888,
-      "occ.call_center_agent": 0.086359126984127,
-      "occ.recruiter": 0.18774801587301582,
-      "occ.qa_quality_control": 1.0,
-      "occ.logistics_coordinator": 0.12785218253968253,
+      "occ.recruiter": 0.18774801587301584,
+      "occ.translator": 0.08635912698412698,
+      "occ.marketing_coordinator": 0.11649305555555557,
       "occ.content_writer": 0.04010416666666667,
-      "occ.warehouse_worker": 0.00625,
       "occ.retail_sales_assistant": 0.06440972222222223,
-      "occ.marketing_coordinator": 0.11649305555555556,
-      "occ.factory_technician": 0.0,
       "occ.digital_marketer": 0.056597222222222215,
-      "occ.data_entry": 0.18774801587301582,
-      "occ.accounting_clerk": 0.056597222222222215
+      "occ.factory_technician": 0.0,
+      "occ.call_center_agent": 0.08635912698412698,
+      "occ.cashier": 0.013888888888888888,
+      "occ.qa_quality_control": 1.0,
+      "occ.accounting_clerk": 0.056597222222222215,
+      "occ.customer_success": 0.18774801587301584,
+      "occ.junior_data_analyst": 0.056597222222222215,
+      "occ.hr_generalist": 0.18774801587301584,
+      "occ.data_entry": 0.18774801587301584,
+      "occ.warehouse_worker": 0.00625
     }
   },
   "wage_data": {
@@ -5295,9 +5295,9 @@
       {
         "target": "occ.junior_data_analyst",
         "target_label": "Junior data analyst",
-        "score": 0.3031985561556442,
+        "score": 0.3031985561556441,
         "wage_delta": 15000.0,
-        "path_cost": 0.15180144384433403,
+        "path_cost": 0.15180144384433414,
         "target_risk": 0.15,
         "path": [
           "occ.bookkeeper",
@@ -5344,9 +5344,9 @@
       {
         "target": "occ.digital_marketer",
         "target_label": "Digital marketer",
-        "score": 0.03798116485129925,
+        "score": 0.03798116485129914,
         "wage_delta": 12000.0,
-        "path_cost": 0.29180144384433404,
+        "path_cost": 0.29180144384433415,
         "target_risk": 0.35,
         "path": [
           "occ.bookkeeper",
@@ -5417,9 +5417,9 @@
       {
         "target": "occ.marketing_coordinator",
         "target_label": "Marketing coordinator",
-        "score": -0.25897535688782747,
+        "score": -0.2589753568878276,
         "wage_delta": 8000.0,
-        "path_cost": 0.4718014438443341,
+        "path_cost": 0.4718014438443342,
         "target_risk": 0.45,
         "path": [
           "occ.bookkeeper",

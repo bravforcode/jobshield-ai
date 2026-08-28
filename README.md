@@ -1,62 +1,36 @@
-# JobShield AI
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Thai Occupation Mobility Network — explainable career path recommender.
+## Getting Started
 
-Spec: `docs/jobshield-ai-spec-v2.md` (also at original `C:\Users\menum\Downloads\jobshield-ai-spec-v2.md`).
-Demo Q&A: `docs/QNA.md`. Implementation notes: `docs/plan.md`.
-
-## Pipeline
-
-```
-[job postings] -> [LLM extract skills] -> [PPMI Skill Graph]
-                                            |
-                                            v
-                          [Occupation Vectors] -> [Occupation Distance]
-                                            |
-                                            v
-                       [Transition Graph] -> [Dijkstra Layer 1]
-                                            |
-                                            v
-                            [Layer 2: rank with wage + risk]
-                                            |
-                                            v
-                                  [Wage Radar: centrality]
-```
-
-## Layout
-
-- `py/` — Python core: graph algorithms, skill extraction (uv workspace, ruff).
-- `ts/` — TypeScript UI + API: bun + biome.
-- `data/` — Generated artifacts: skill graph, occupation vectors, transition graph.
-- `py/tests/` — 87 Python tests across 8 test files.
-- `ts/api/src/` — 18 TypeScript tests across 4 test files.
-- `docs/` — plan + spec copies.
-
-## Quick start
+First, run the development server:
 
 ```bash
-# 0. Env (optional — defaults in .env.example)
-cp .env.example .env
-
-# 1. Python deps + mock data (one-time)
-cd py && uv sync && uv run python -m jobshield.data.mock_data
-
-# 2. Build artifacts
-cd py && uv run python -m jobshield.cli.build --mock
-# -> writes data/artifacts.json
-
-# 3. Tests + lint
-cd py && uv run pytest            # 87 tests
-cd .. && bun test                 # 18 tests
-cd py && uv run ruff check .
-bun run lint
-
-# 4. API + web (reads data/artifacts.json)
-JOBSHIELD_ARTIFACTS="data/artifacts.json" bun run ts/api/src/index.ts
-# -> http://localhost:3000
-#    /api/occupations, /api/recommend?source=occ.data_entry, /api/wage-radar, /api/health
-#    /web/main.ts, /web/styles.css (also served from the same process)
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-See `docs/plan.md` for the phased build plan and `docs/QNA.md` for the
-four expected judge questions.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
