@@ -14,15 +14,33 @@ const REQUIRED_KEYS: Array<keyof PipelineArtifacts> = [
 export class ArtifactsLoadError extends Error {}
 
 export async function loadArtifacts(path: string): Promise<PipelineArtifacts> {
-  const file = Bun.file(path);
-  if (!(await file.exists())) {
-    throw new ArtifactsLoadError(`artifacts file not found: ${path}`);
-  }
   let raw: unknown;
-  try {
-    raw = await file.json();
-  } catch (err) {
-    throw new ArtifactsLoadError(`artifacts file is not valid JSON: ${(err as Error).message}`);
+  // Bun runtime (local dev): use Bun.file for speed.
+  // Vercel Node runtime: Bun is undefined, fallback to fs.
+  const bunFile = (globalThis as unknown as { Bun?: { file: (p: string) => { exists: () => Promise<boolean>; json: () => Promise<unknown> } } }).Bun?.file(path);
+  if (bunFile) {
+    if (!(await bunFile.exists())) {
+      throw new ArtifactsLoadError(`artifacts file not found: ${path}`);
+    }
+    try {
+      raw = await bunFile.json();
+    } catch (err) {
+      throw new ArtifactsLoadError(`artifacts file is not valid JSON: ${(err as Error).message}`);
+    }
+  } else {
+    // Node fallback (Vercel)
+    const { readFile, access } = await import("node:fs/promises");
+    try {
+      await access(path);
+    } catch {
+      throw new ArtifactsLoadError(`artifacts file not found: ${path}`);
+    }
+    try {
+      const text = await readFile(path, "utf-8");
+      raw = JSON.parse(text);
+    } catch (err) {
+      throw new ArtifactsLoadError(`artifacts file is not valid JSON: ${(err as Error).message}`);
+    }
   }
   return validateArtifacts(raw);
 }

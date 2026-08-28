@@ -14,7 +14,7 @@ import { charge as rateLimitCharge, clientKey as rateLimitKey } from "./rate_lim
 import { recommend } from "./recommend";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
-const REPO_ROOT = resolve(__dirname, "../../../");
+const REPO_ROOT = process.cwd();
 const ARTIFACTS_PATH = process.env.JOBSHIELD_ARTIFACTS ?? join(REPO_ROOT, "data/artifacts.json");
 const WEB_ROOT = process.env.JOBSHIELD_WEB_ROOT ?? resolve(REPO_ROOT, "ts/web");
 const PORT = Number(process.env.PORT ?? 3000);
@@ -65,6 +65,27 @@ function tooManyRequests(resetMs: number): Response {
       "retry-after": String(Math.ceil(resetMs / 1000)),
     },
   });
+}
+
+async function serveStaticFile(candidate: string, contentType: string): Promise<Response | null> {
+  // Try Bun.file first (local dev), fallback to Node fs (Vercel).
+  const bunFile = (globalThis as unknown as { Bun?: { file: (p: string) => { exists: () => Promise<boolean> } } }).Bun?.file(candidate);
+  if (bunFile) {
+    if (await bunFile.exists()) {
+      const file = (globalThis as unknown as { Bun: { file: (p: string) => Blob } }).Bun.file(candidate);
+      return new Response(file as unknown as BodyInit, { headers: { "content-type": contentType } });
+    }
+    return null;
+  }
+  // Node fallback (Vercel)
+  const { readFile, access } = await import("node:fs/promises");
+  try {
+    await access(candidate);
+    const buf = await readFile(candidate);
+    return new Response(buf as unknown as BodyInit, { headers: { "content-type": contentType } });
+  } catch {
+    return null;
+  }
 }
 
 const SOURCE_CODE_MAX = 64; // arbitrary; longest known occ code is 26 chars.
@@ -158,11 +179,16 @@ export async function handleRequest(req: Request): Promise<Response> {
       return json({ ok: true, artifacts_path: ARTIFACTS_PATH });
     }
     // Static web assets (best-effort).
-    // HTML index is at ts/web/index.html; CSS/TS are at ts/web/src/*.
+    // HTML index is at ts/web/index.html; CSS/JS are in ts/web/dist after build.
     if (path === "/" || path === "/index.html") {
-      const file = Bun.file(join(WEB_ROOT, "index.html"));
-      if (await file.exists()) {
-        return new Response(file, { headers: { "content-type": "text/html" } });
+      const candidate = join(WEB_ROOT, "index.html");
+      const ct = "text/html";
+      // Try dist/index.html first (Vercel build output), then src location.
+      for (const cand of [join(WEB_ROOT, "dist", "index.html"), candidate]) {
+        const rel = relative(WEB_ROOT, normalize(cand));
+        if (rel.startsWith("..") || rel.startsWith(sep)) continue;
+        const resp = await serveStaticFile(cand, ct);
+        if (resp) return resp;
       }
     }
     if (path.startsWith("/web/")) {
@@ -181,15 +207,13 @@ export async function handleRequest(req: Request): Promise<Response> {
         if (rel.startsWith("..") || rel.startsWith(sep) || rel === "..") {
           return notFound("forbidden");
         }
-        const file = Bun.file(candidate);
-        if (await file.exists()) {
-          const ct = candidate.endsWith(".css")
-            ? "text/css"
-            : candidate.endsWith(".ts") || candidate.endsWith(".js")
-              ? "application/javascript"
-              : "application/octet-stream";
-          return new Response(file, { headers: { "content-type": ct } });
-        }
+        const ct = candidate.endsWith(".css")
+          ? "text/css"
+          : candidate.endsWith(".ts") || candidate.endsWith(".js")
+            ? "application/javascript"
+            : "application/octet-stream";
+        const resp = await serveStaticFile(candidate, ct);
+        if (resp) return resp;
       }
     }
     return notFound(`unknown route: ${path}`);
