@@ -167,23 +167,29 @@ export async function handleRequest(req: Request): Promise<Response> {
     }
     if (path.startsWith("/web/")) {
       const tail = path.slice("/web/".length);
-      // /web/main.ts -> src/main.ts; /web/styles.css -> src/styles.css.
-      const candidate = normalize(join(WEB_ROOT, "src", tail));
-      // Use path.relative + startsWith('..') check to defeat "../.." escapes.
-      // startsWith(WEB_ROOT) alone is unsafe (prefix match — /jobsume/web-evil/
-      // would pass).
-      const rel = relative(WEB_ROOT, candidate);
-      if (rel.startsWith("..") || rel.startsWith(sep) || rel === "..") {
-        return notFound("forbidden");
-      }
-      const file = Bun.file(candidate);
-      if (await file.exists()) {
-        const ct = candidate.endsWith(".css")
-          ? "text/css"
-          : candidate.endsWith(".ts") || candidate.endsWith(".js")
-            ? "application/javascript"
-            : "application/octet-stream";
-        return new Response(file, { headers: { "content-type": ct } });
+      // Built assets are in ts/web/dist (main.js, styles.css). Fall back to
+      // ts/web/src for dev without a build step. Check dist first.
+      const candidates = [
+        normalize(join(WEB_ROOT, "dist", tail)),
+        normalize(join(WEB_ROOT, "src", tail)),
+      ];
+      for (const candidate of candidates) {
+        // Use path.relative + startsWith('..') check to defeat "../.." escapes.
+        // startsWith(WEB_ROOT) alone is unsafe (prefix match — /jobsume/web-evil/
+        // would pass).
+        const rel = relative(WEB_ROOT, candidate);
+        if (rel.startsWith("..") || rel.startsWith(sep) || rel === "..") {
+          return notFound("forbidden");
+        }
+        const file = Bun.file(candidate);
+        if (await file.exists()) {
+          const ct = candidate.endsWith(".css")
+            ? "text/css"
+            : candidate.endsWith(".ts") || candidate.endsWith(".js")
+              ? "application/javascript"
+              : "application/octet-stream";
+          return new Response(file, { headers: { "content-type": ct } });
+        }
       }
     }
     return notFound(`unknown route: ${path}`);

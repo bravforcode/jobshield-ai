@@ -13,6 +13,8 @@
     "format:py": "cd py && uv run ruff format .",
     "build:artifacts": "cd py && uv run python -m jobshield.cli.build --mock",
     "seed:mock": "cd py && uv run python -m jobshield.data.mock_data",
+    "build:web": "bun build ts/web/src/main.ts --outdir ts/web/dist --target browser && cp ts/web/src/styles.css ts/web/dist/styles.css",
+    "build": "bun run build:web && bun run build:artifacts",
     "serve:api": "bun run ts/api/src/index.ts"
   },
   "devDependencies": {
