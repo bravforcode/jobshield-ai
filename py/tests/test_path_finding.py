@@ -192,3 +192,63 @@ def test_path_cost_equals_sum_of_edge_costs(path_transition_graph) -> None:
             )
             accumulated += e.cost
         assert math.isclose(accumulated, expected_cost, rel_tol=1e-9)
+
+
+def test_dijkstra_rejects_unknown_source() -> None:
+    """P2 review finding: previously, passing a source not in the graph
+    silently returned `dist[unknown] = 0.0` — a footgun. Now it raises KeyError."""
+    import pytest
+
+    # Build a minimal graph instead.
+    from jobshield.types import OccupationCode, TransitionEdge, TransitionGraph
+
+    a = OccupationCode("a", "A")
+    only = OccupationCode("only", "Only")
+    g = TransitionGraph()
+    g.nodes = {a, only}
+    fwd = TransitionEdge(source=a, target=only, skill_distance=0.5)
+    g.edges.append(fwd)
+    g.edges.append(TransitionEdge(source=only, target=a, skill_distance=0.5))
+    g.adj.setdefault(a, []).append(0)
+    g.adj.setdefault(only, []).append(1)
+
+    with pytest.raises(KeyError, match="not in graph"):
+        dijkstra_from_source(g, OccupationCode("missing", "Missing"))
+
+
+def test_recommend_career_paths_does_not_mutate_caller_graph() -> None:
+    """P2 review finding: previously, recommend_career_paths called
+    normalize_edge_weights in-place on the caller's graph. A caller
+    iterating recommend over multiple source occupations would see
+    `dist_norm`/`risk_norm` re-stamped repeatedly. The function now
+    works on a shallow copy."""
+    from jobshield.path import recommend_career_paths
+    from jobshield.types import OccupationCode, TransitionEdge, TransitionGraph, WageStats
+
+    a = OccupationCode("a", "A")
+    b = OccupationCode("b", "B")
+    g = TransitionGraph()
+    g.nodes = {a, b}
+    fwd = TransitionEdge(source=a, target=b, skill_distance=0.4)
+    rev = TransitionEdge(source=b, target=a, skill_distance=0.4)
+    g.edges.append(fwd)
+    g.edges.append(rev)
+    g.adj.setdefault(a, []).append(0)
+    g.adj.setdefault(b, []).append(1)
+
+    wage = {a: WageStats(median=10_000), b: WageStats(median=20_000)}
+    risk = {a: 0.3, b: 0.5}
+
+    # Capture original state.
+    orig_dist_norms = [e.dist_norm for e in g.edges]
+    orig_risk_norms = [e.risk_norm for e in g.edges]
+
+    recs = recommend_career_paths(a, g, wage, risk)
+    assert len(recs) == 1
+    assert recs[0].target == b
+
+    # Caller's graph should not have been mutated.
+    after_dist_norms = [e.dist_norm for e in g.edges]
+    after_risk_norms = [e.risk_norm for e in g.edges]
+    assert orig_dist_norms == after_dist_norms
+    assert orig_risk_norms == after_risk_norms

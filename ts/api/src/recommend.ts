@@ -6,7 +6,6 @@ import type {
   HopExplanation,
   PipelineArtifacts,
   RecommendationPayload,
-  TransitionEdgePayload,
 } from "@jobshield/shared/contracts";
 
 interface EdgeInternal {
@@ -17,6 +16,65 @@ interface EdgeInternal {
   dist_norm: number;
   risk_norm: number;
   cost: number;
+}
+
+// Min-heap over `[cost, counter, node]` tuples. Replaces the previous
+// `arr.sort().shift()` approach which was O(N log N) per extract (P2 review
+// finding — code reviewer would flag the scale at 10k+ nodes).
+class DijkstraHeap {
+  private readonly data: Array<[number, number, string]> = [];
+
+  push(cost: number, counter: number, node: string): void {
+    this.data.push([cost, counter, node]);
+    let i = this.data.length - 1;
+    while (i > 0) {
+      const parent = (i - 1) >> 1;
+      const cur = this.data[i];
+      const par = this.data[parent];
+      if (cur === undefined || par === undefined) break;
+      if (par[0] < cur[0] || (par[0] === cur[0] && par[1] <= cur[1])) break;
+      this.data[i] = par;
+      this.data[parent] = cur;
+      i = parent;
+    }
+  }
+
+  pop(): [number, number, string] | undefined {
+    if (this.data.length === 0) return undefined;
+    const top = this.data[0];
+    const last = this.data.pop();
+    if (top === undefined || last === undefined) return undefined;
+    if (this.data.length === 0) return top;
+    this.data[0] = last;
+    const n = this.data.length;
+    let i = 0;
+    while (true) {
+      const l = 2 * i + 1;
+      const r = 2 * i + 2;
+      let smallest = i;
+      const sl = l < n ? this.data[l] : undefined;
+      const sr = r < n ? this.data[r] : undefined;
+      const sc = this.data[smallest];
+      if (sc === undefined) break;
+      if (sl && (sl[0] < sc[0] || (sl[0] === sc[0] && sl[1] < sc[1]))) smallest = l;
+      const srCand = this.data[smallest];
+      if (sr && srCand && (sr[0] < srCand[0] || (sr[0] === srCand[0] && sr[1] < srCand[1]))) {
+        smallest = r;
+      }
+      if (smallest === i) break;
+      const a = this.data[i];
+      const b = this.data[smallest];
+      if (a === undefined || b === undefined) break;
+      this.data[i] = b;
+      this.data[smallest] = a;
+      i = smallest;
+    }
+    return top;
+  }
+
+  get size(): number {
+    return this.data.length;
+  }
 }
 
 function buildInternalGraph(
@@ -68,12 +126,12 @@ function dijkstra(
   }
   dist.set(source, 0);
   const visited = new Set<string>();
-  // Binary heap: (cost, counter, node) — counter breaks ties deterministically.
-  const pq: Array<[number, number, string]> = [[0, 0, source]];
-  let counter = 1;
-  while (pq.length > 0) {
-    pq.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
-    const head = pq.shift();
+  const heap = new DijkstraHeap();
+  // Counter breaks ties deterministically when two entries have equal cost.
+  let counter = 0;
+  heap.push(0, counter, source);
+  while (heap.size > 0) {
+    const head = heap.pop();
     if (!head) break;
     const [d, _c, u] = head;
     if (visited.has(u)) continue;
@@ -86,7 +144,7 @@ function dijkstra(
       if (nd < (dist.get(v) ?? Number.POSITIVE_INFINITY)) {
         dist.set(v, nd);
         prev.set(v, { parent: u, edge: e });
-        pq.push([nd, counter++, v]);
+        heap.push(nd, ++counter, v);
       }
     }
   }
@@ -162,10 +220,18 @@ export function recommend(
     scored.push({ occ, score, wageDelta, pathCost });
   }
   scored.sort((a, b) => b.score - a.score);
-  const top = scored.slice(0, topN);
+  const top = scored.slice(0, Math.max(0, Math.floor(topN)));
 
   return top.map(({ occ, score, wageDelta, pathCost }) => {
     const rec = reconstruct(prev, source, occ);
+    // `rec` is null only when the prev map cannot reach target — should not
+    // happen because `dist` filter eliminated inf-cost targets. Be loud
+    // rather than fabricating a path.
+    if (!rec) {
+      throw new Error(
+        `reconstruct returned null for ${occ} (source=${source}); this indicates a graph-consistency bug, not a benign miss`,
+      );
+    }
     return {
       target: occ,
       target_label: occ, // The artifacts payload doesn't carry labels per-occ; UI can fall back to code.
@@ -173,8 +239,11 @@ export function recommend(
       wage_delta: wageDelta,
       path_cost: pathCost,
       target_risk: artifacts.risk_scores[occ] ?? 0,
-      path: rec?.path ?? [source, occ],
-      path_explanation: rec?.explanations ?? [],
+      path: rec.path,
+      path_explanation: rec.explanations,
     };
   });
 }
+
+// Export the heap for unit testing the priority-queue invariant.
+export { DijkstraHeap };

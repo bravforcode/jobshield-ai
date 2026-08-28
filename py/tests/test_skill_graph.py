@@ -231,3 +231,19 @@ def test_build_skill_graph_nodes_set_contains_all_observed_skills():
     g = build_skill_graph(postings)
     names = {n.name for n in g.nodes}
     assert names == {"python", "sql", "excel"}
+
+
+def test_extract_alias_does_not_match_substring_of_unrelated_word():
+    """Regression: short aliases ('cs', 'pm', 'qa', 'qc', 'ts', 'wh', 'ml')
+    used to match as substrings of unrelated words ('discuss' contains 'cs',
+    'implementation' contains 'pm', 'discussing' contains 'cs'). The fix
+    anchors the match on a word boundary (negative-lookahead for [a-z0-9])."""
+    assert "customer_service" not in extract_skills_llm("let's discuss the process")
+    assert "project_management" not in extract_skills_llm("implementation is hard")
+    assert "customer_service" not in extract_skills_llm("discussion group")
+    assert "qa_testing" not in extract_skills_llm("the squabble was loud")
+    assert "warehouse" not in extract_skills_llm("the wharf is busy")  # 'wharf' is not 'wh'
+    # Positive control: a real 'cs' token should still match.
+    assert "customer_service" in extract_skills_llm("we need a cs lead")
+    assert "project_management" in extract_skills_llm("hiring a pm now")
+    assert "qa_testing" in extract_skills_llm("hiring a qa engineer")

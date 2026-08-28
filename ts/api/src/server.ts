@@ -5,11 +5,12 @@
 //   GET /api/wage-radar             -> centrality vs wage table
 //   GET /                           -> static web/
 
-import { join, normalize, resolve } from "node:path";
+import { join, normalize, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { PipelineArtifacts } from "@jobshield/shared/contracts";
 import { ArtifactsLoadError, loadArtifacts } from "./artifacts";
 import { computeWageRadar } from "./radar";
+import { charge as rateLimitCharge, clientKey as rateLimitKey } from "./rate_limit";
 import { recommend } from "./recommend";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -19,10 +20,27 @@ const WEB_ROOT = process.env.JOBSHIELD_WEB_ROOT ?? resolve(REPO_ROOT, "ts/web");
 const PORT = Number(process.env.PORT ?? 3000);
 
 let cached: PipelineArtifacts | null = null;
+let cachedRadar: ReturnType<typeof computeWageRadar> | null = null;
 
 async function getArtifacts(): Promise<PipelineArtifacts> {
   if (cached === null) {
     cached = await loadArtifacts(ARTIFACTS_PATH);
+    cachedRadar = computeWageRadar(cached);
+  }
+  return cached;
+}
+
+function getRadarRows(): ReturnType<typeof computeWageRadar> {
+  if (cachedRadar === null || cached === null) {
+    // Defensive: should be set by getArtifacts() which must be called first.
+    throw new Error("getRadarRows called before getArtifacts");
+  }
+  return cachedRadar;
+}
+
+function getCached(): PipelineArtifacts {
+  if (cached === null) {
+    throw new Error("getCached called before getArtifacts");
   }
   return cached;
 }
@@ -38,13 +56,30 @@ function notFound(message: string): Response {
   return json({ error: message }, 404);
 }
 
-function buildOccupationSummaries(artifacts: PipelineArtifacts) {
+function tooManyRequests(resetMs: number): Response {
+  return new Response(JSON.stringify({ error: "rate limit exceeded" }), {
+    status: 429,
+    headers: {
+      "content-type": "application/json",
+      "access-control-allow-origin": "*",
+      "retry-after": String(Math.ceil(resetMs / 1000)),
+    },
+  });
+}
+
+const SOURCE_CODE_MAX = 64; // arbitrary; longest known occ code is 26 chars.
+const PATH_CODE_MAX = 256; // /api/occupations/<code> — same cap as source.
+
+function buildOccupationSummaries(
+  artifacts: PipelineArtifacts,
+  radarRows: ReturnType<typeof computeWageRadar>,
+) {
   return Object.keys(artifacts.wage_data).map((code) => {
     const w = artifacts.wage_data[code]?.median ?? 0;
     const risk = artifacts.risk_scores[code] ?? 0;
     const degree = artifacts.centrality.degree[code] ?? 0;
     const between = artifacts.centrality.betweenness[code] ?? 0;
-    const radar = computeWageRadar(artifacts).find((r) => r.occ === code);
+    const radar = radarRows.find((r) => r.occ === code);
     return {
       code,
       label: code,
@@ -53,7 +88,9 @@ function buildOccupationSummaries(artifacts: PipelineArtifacts) {
       degree_centrality: degree,
       betweenness_centrality: between,
       underpayment_gap: radar?.gap_ratio ?? 0,
-      predicted_wage: radar ? radar.centrality * 0 + w / (1 - (radar.gap_ratio ?? 0)) : w,
+      // gap_ratio = (predicted - actual) / predicted => predicted = actual / (1 - gap).
+      // For overpaid (negative gap), the formula still yields a finite number.
+      predicted_wage: radar ? w / (1 - (radar.gap_ratio ?? 0)) : w,
       actual_wage: w,
     };
   });
@@ -75,29 +112,47 @@ export async function handleRequest(req: Request): Promise<Response> {
     });
   }
 
+  // Per-client rate limit. Applied before any work so a flooding client
+  // can't waste CPU on /api/recommend's Dijkstra.
+  const rl = rateLimitCharge(rateLimitKey(req));
+  if (!rl.ok) {
+    return tooManyRequests(rl.resetMs);
+  }
+
   try {
     if (path === "/api/occupations") {
-      const artifacts = await getArtifacts();
-      return json(buildOccupationSummaries(artifacts));
+      await getArtifacts();
+      return json(buildOccupationSummaries(getCached(), getRadarRows()));
     }
     if (path.startsWith("/api/occupations/")) {
       const code = decodeURIComponent(path.slice("/api/occupations/".length));
-      const artifacts = await getArtifacts();
-      const summary = buildOccupationSummaries(artifacts).find((o) => o.code === code);
+      if (code.length > PATH_CODE_MAX) return notFound("code too long");
+      await getArtifacts();
+      const summary = buildOccupationSummaries(getCached(), getRadarRows()).find(
+        (o) => o.code === code,
+      );
       if (!summary) return notFound(`unknown occupation: ${code}`);
       return json(summary);
     }
     if (path === "/api/recommend") {
       const source = url.searchParams.get("source");
       if (!source) return notFound("missing source param");
-      const topN = Number(url.searchParams.get("topN") ?? "5");
+      if (source.length > SOURCE_CODE_MAX) return notFound("source too long");
+      const topNParam = url.searchParams.get("topN") ?? "5";
+      const topN = Number(topNParam);
+      if (!Number.isFinite(topN) || topN < 1 || topN > 50) {
+        return notFound(`invalid topN: ${topNParam} (must be integer 1..50)`);
+      }
       const artifacts = await getArtifacts();
+      if (!artifacts.wage_data[source]) {
+        return notFound(`unknown source: ${source}`);
+      }
       const recs = recommend(artifacts, source, { topN });
       return json({ source, recommendations: recs });
     }
     if (path === "/api/wage-radar") {
-      const artifacts = await getArtifacts();
-      return json(computeWageRadar(artifacts));
+      await getArtifacts();
+      return json(getRadarRows());
     }
     if (path === "/api/health") {
       return json({ ok: true, artifacts_path: ARTIFACTS_PATH });
@@ -113,13 +168,19 @@ export async function handleRequest(req: Request): Promise<Response> {
     if (path.startsWith("/web/")) {
       const tail = path.slice("/web/".length);
       // /web/main.ts -> src/main.ts; /web/styles.css -> src/styles.css.
-      const safe = normalize(join(WEB_ROOT, "src", tail));
-      if (!safe.startsWith(WEB_ROOT)) return notFound("forbidden");
-      const file = Bun.file(safe);
+      const candidate = normalize(join(WEB_ROOT, "src", tail));
+      // Use path.relative + startsWith('..') check to defeat "../.." escapes.
+      // startsWith(WEB_ROOT) alone is unsafe (prefix match — /jobsume/web-evil/
+      // would pass).
+      const rel = relative(WEB_ROOT, candidate);
+      if (rel.startsWith("..") || rel.startsWith(sep) || rel === "..") {
+        return notFound("forbidden");
+      }
+      const file = Bun.file(candidate);
       if (await file.exists()) {
-        const ct = safe.endsWith(".css")
+        const ct = candidate.endsWith(".css")
           ? "text/css"
-          : safe.endsWith(".ts") || safe.endsWith(".js")
+          : candidate.endsWith(".ts") || candidate.endsWith(".js")
             ? "application/javascript"
             : "application/octet-stream";
         return new Response(file, { headers: { "content-type": ct } });

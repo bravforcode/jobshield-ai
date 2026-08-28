@@ -3,7 +3,9 @@ node_modules/
 __pycache__/
 *.pyc
 dist/
-data/generated/
+data/_test_artifacts.json
+data/_test_artifacts.*
+data/artifacts.json
 .pytest_cache/
 .ruff_cache/
 *.egg-info/

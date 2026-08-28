@@ -62,6 +62,27 @@ def rank_recommended_targets(
     return scored[:top_n]
 
 
+def _normalize_copy(
+    g: TransitionGraph,
+    risk_scores: dict[OccupationCode, float],
+) -> TransitionGraph:
+    """Return a deep-copy of `g` edges with normalized dist_norm/risk_norm.
+
+    Avoids mutating the caller's graph. Edges are dataclass-shallow-copied
+    via `dataclasses.replace` so we share the inner lists (shared_skills)
+    but own the per-edge scalar fields (dist_norm, risk_norm, cost).
+    Topology (nodes, adj) is shared by reference — we never mutate it.
+    """
+    from dataclasses import replace
+
+    g2 = TransitionGraph()
+    g2.nodes = g.nodes
+    g2.edges = [replace(e) for e in g.edges]
+    g2.adj = g.adj  # shared — we never mutate adjacency
+    normalize_edge_weights(g2, risk_scores)
+    return g2
+
+
 def recommend_career_paths(
     source_occ: OccupationCode,
     g: TransitionGraph,
@@ -75,12 +96,13 @@ def recommend_career_paths(
 ) -> list[CareerRecommendation]:
     """One Dijkstra from `source_occ`, then Layer-2 ranking + path reconstruction.
 
-    Normalizes edge weights in-place (idempotent). Callers that pre-normalized
-    pay no extra cost beyond a re-derivation of the same `dist_norm`/`risk_norm`
-    values.
+    Does NOT mutate the caller's graph. Internally builds a shallow copy
+    with fresh `dist_norm`/`risk_norm` stamps, runs Dijkstra on the copy,
+    and discards the copy. Callers can safely call this repeatedly with
+    the same graph (e.g. CLI iterating over all 18 source occupations).
     """
-    normalize_edge_weights(g, risk_scores)
-    dist, prev = dijkstra_from_source(g, source_occ, alpha, gamma)
+    g2 = _normalize_copy(g, risk_scores)
+    dist, prev = dijkstra_from_source(g2, source_occ, alpha, gamma)
     top = rank_recommended_targets(
         source_occ, dist, wage_data, risk_scores, beta, gamma2, top_n
     )
@@ -102,4 +124,4 @@ def recommend_career_paths(
     return recs
 
 
-__all__ = ["rank_recommended_targets", "recommend_career_paths"]
+__all__ = ["_normalize_copy", "rank_recommended_targets", "recommend_career_paths"]
