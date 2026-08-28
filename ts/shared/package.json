@@ -1,0 +1,10 @@
+{
+  "name": "@jobshield/shared",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/contracts.ts",
+  "exports": {
+    ".": "./src/contracts.ts"
+  },
+  "private": true
+}

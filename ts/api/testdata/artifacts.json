@@ -1,0 +1,34 @@
+{
+  "skill_graph": {
+    "nodes": ["a", "b", "c"],
+    "freq": { "a": 3, "b": 3, "c": 3 },
+    "edges": [
+      { "a": "a", "b": "b", "ppmi": 0.5 },
+      { "a": "a", "b": "c", "ppmi": 0.4 }
+    ]
+  },
+  "transition_graph": {
+    "nodes": ["x", "y", "z"],
+    "edges": [
+      { "source": "x", "target": "y", "skill_distance": 0.3, "shared_skills": ["a"] },
+      { "source": "x", "target": "z", "skill_distance": 0.4, "shared_skills": ["b"] },
+      { "source": "y", "target": "x", "skill_distance": 0.3, "shared_skills": ["a"] },
+      { "source": "z", "target": "x", "skill_distance": 0.4, "shared_skills": ["b"] }
+    ]
+  },
+  "centrality": {
+    "degree": { "x": 1.0, "y": 0.5, "z": 0.5 },
+    "betweenness": { "x": 0.0, "y": 1.0, "z": 1.0 }
+  },
+  "wage_data": {
+    "x": { "median": 10000, "p25": 9000, "p75": 11000, "sample_count": 10 },
+    "y": { "median": 11000, "p25": 10000, "p75": 12000, "sample_count": 10 },
+    "z": { "median": 20000, "p25": 18000, "p75": 22000, "sample_count": 10 }
+  },
+  "risk_scores": { "x": 0.5, "y": 0.5, "z": 0.3 },
+  "recommendations": {
+    "x": [],
+    "y": [],
+    "z": []
+  }
+}

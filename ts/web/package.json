@@ -1,0 +1,12 @@
+{
+  "name": "@jobshield/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'web is served by @jobshield/api on /' && exit 0"
+  },
+  "dependencies": {
+    "@jobshield/shared": "workspace:*"
+  }
+}

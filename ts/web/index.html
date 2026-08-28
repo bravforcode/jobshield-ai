@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JobShield AI — Thai Occupation Mobility</title>
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>JobShield AI</h1>
+      <p class="disclaimer">
+        Prototype. Skill graph built from job-posting co-occurrence (proxy, not
+        real transition data — see spec §8). Recommendations are explainable:
+        every hop lists the overlapping skills.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Pick your starting occupation</h2>
+        <select id="source" aria-label="Source occupation"></select>
+        <span id="source-meta" class="muted"></span>
+      </section>
+
+      <section class="panel">
+        <h2>Top recommendations</h2>
+        <div id="recs" class="cards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Wage Radar</h2>
+        <p class="muted">
+          Degree centrality (x) vs median wage (y). Red = underpaid relative
+          to network power. Click a point for details.
+        </p>
+        <canvas id="radar" width="640" height="360" aria-label="Wage radar scatter"></canvas>
+        <div id="radar-detail" class="muted small"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Built for hackathon demo. See spec §8 for limitations and §10 for
+        expected judge questions.
+      </p>
+    </footer>
+
+    <script type="module" src="/web/main.ts"></script>
+  </body>
+</html>
