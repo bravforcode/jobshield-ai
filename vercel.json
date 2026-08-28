@@ -1,5 +1,6 @@
 {
   "buildCommand": "bun run build:web",
+  "outputDirectory": "ts/web/dist",
   "installCommand": "bun install",
   "framework": null,
   "functions": {
@@ -8,6 +9,8 @@
     }
   },
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" },
+    { "source": "/web/(.*)", "destination": "/api/index" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
