@@ -162,10 +162,18 @@ export function recommend(
     scored.push({ occ, score, wageDelta, pathCost });
   }
   scored.sort((a, b) => b.score - a.score);
-  const top = scored.slice(0, topN);
+  const top = scored.slice(0, Math.max(0, Math.floor(topN)));
 
   return top.map(({ occ, score, wageDelta, pathCost }) => {
     const rec = reconstruct(prev, source, occ);
+    // `rec` is null only when the prev map cannot reach target — should not
+    // happen because `dist` filter eliminated inf-cost targets. Be loud
+    // rather than fabricating a path.
+    if (!rec) {
+      throw new Error(
+        `reconstruct returned null for ${occ} (source=${source}); this indicates a graph-consistency bug, not a benign miss`,
+      );
+    }
     return {
       target: occ,
       target_label: occ, // The artifacts payload doesn't carry labels per-occ; UI can fall back to code.
@@ -173,8 +181,8 @@ export function recommend(
       wage_delta: wageDelta,
       path_cost: pathCost,
       target_risk: artifacts.risk_scores[occ] ?? 0,
-      path: rec?.path ?? [source, occ],
-      path_explanation: rec?.explanations ?? [],
+      path: rec.path,
+      path_explanation: rec.explanations,
     };
   });
 }

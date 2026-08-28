@@ -111,9 +111,14 @@ def extract_skills_llm(text: str) -> list[str]:
     lower = text.lower()
     found: list[str] = []
 
-    # Match alias phrases first (longest-first to avoid partial overlaps).
+    # Match alias phrases with word boundaries. `re.escape` handles special
+    # chars (e.g. "sql server" contains a space). Without \b around short
+    # aliases ("cs", "pm", "qa") the substring match would fire on substrings
+    # of unrelated words ("discuss" contains "cs", "implementation" contains
+    # "pm", etc.) and pollute the PPMI graph with false-positive co-occurrences.
     for alias in _ALIAS_KEYS_SORTED:
-        if alias in lower:
+        pattern = rf"(?<![a-z0-9]){re.escape(alias)}(?![a-z0-9])"
+        if re.search(pattern, lower):
             found.append(ALIAS_MAP[alias])
 
     # Match canonical skill names using word boundaries. "ts" would match
