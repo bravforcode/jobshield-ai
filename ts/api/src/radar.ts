@@ -4,7 +4,7 @@ import type {
   CentralityPayload,
   PipelineArtifacts,
   WageRadarRow,
-} from "@jobshield/shared/contracts";
+} from "../../shared/src/contracts.js";
 
 function regressionPredict(x: number, allX: number[], allY: number[]): number {
   const n = allX.length;

@@ -1,6 +1,6 @@
 // Load + validate the artifacts JSON produced by the Python CLI.
 
-import type { PipelineArtifacts } from "@jobshield/shared/contracts";
+import type { PipelineArtifacts } from "../../shared/src/contracts.js";
 
 const REQUIRED_KEYS: Array<keyof PipelineArtifacts> = [
   "skill_graph",

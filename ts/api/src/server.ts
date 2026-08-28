@@ -7,11 +7,11 @@
 
 import { join, normalize, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { PipelineArtifacts } from "@jobshield/shared/contracts";
-import { ArtifactsLoadError, loadArtifacts } from "./artifacts";
-import { computeWageRadar } from "./radar";
-import { charge as rateLimitCharge, clientKey as rateLimitKey } from "./rate_limit";
-import { recommend } from "./recommend";
+import type { PipelineArtifacts } from "../../shared/src/contracts.js";
+import { ArtifactsLoadError, loadArtifacts } from "./artifacts.js";
+import { computeWageRadar } from "./radar.js";
+import { charge as rateLimitCharge, clientKey as rateLimitKey } from "./rate_limit.js";
+import { recommend } from "./recommend.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const REPO_ROOT = process.cwd();

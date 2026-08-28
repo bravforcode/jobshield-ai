@@ -12,3 +12,4 @@ data/artifacts.json
 .tsbuildinfo
 .env
 .env.local
+.vercel

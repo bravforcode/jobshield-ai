@@ -6,7 +6,7 @@ import type {
   HopExplanation,
   PipelineArtifacts,
   RecommendationPayload,
-} from "@jobshield/shared/contracts";
+} from "../../shared/src/contracts.js";
 
 interface EdgeInternal {
   source: string;

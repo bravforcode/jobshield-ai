@@ -2,7 +2,7 @@
 // Supports both Web-standard `Request -> Response` (Edge) and Node
 // `(IncomingMessage, ServerResponse)` (Node runtime) signatures.
 
-import { handleRequest } from "../ts/api/src/server";
+import { handleRequest } from "../ts/api/src/server.js";
 
 export default async function handler(req: Request, res?: unknown): Promise<Response | void> {
   // Node-style: (req: IncomingMessage, res: ServerResponse)
