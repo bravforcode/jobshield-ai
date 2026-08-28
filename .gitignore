@@ -5,6 +5,7 @@ __pycache__/
 dist/
 data/_test_artifacts.json
 data/_test_artifacts.*
+data/artifacts.json
 .pytest_cache/
 .ruff_cache/
 *.egg-info/

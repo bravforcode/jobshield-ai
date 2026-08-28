@@ -11,9 +11,9 @@
     "lint": "biome check .",
     "lint:py": "cd py && uv run ruff check .",
     "format:py": "cd py && uv run ruff format .",
-    "build:graph": "cd py && uv run python -m jobshield.graph.build",
-    "serve:api": "cd ts/api && bun run dev",
-    "serve:web": "cd ts/web && bun run dev"
+    "build:artifacts": "cd py && uv run python -m jobshield.cli.build --mock",
+    "seed:mock": "cd py && uv run python -m jobshield.data.mock_data",
+    "serve:api": "bun run ts/api/src/index.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
