@@ -29,7 +29,17 @@ def dijkstra_from_source(
     Returns:
         dist: mapping node -> accumulated cost. inf means unreachable.
         prev: mapping node -> (parent, edge_used) or None for source/unreachable.
+
+    Raises:
+        KeyError: `source` is not a node in `g` (caller bug, not a runtime
+            condition we want to paper over with `inf`).
     """
+    if source not in g.nodes:
+        raise KeyError(
+            f"dijkstra_from_source: source {source.code!r} is not in graph "
+            f"(known nodes: {sorted(n.code for n in g.nodes)})"
+        )
+
     # Stamp per-call costs onto edges (cheap, avoids carrying alpha/gamma around).
     for e in g.edges:
         e.cost = edge_cost(e, alpha, gamma)

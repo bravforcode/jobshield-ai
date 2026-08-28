@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 import type { PipelineArtifacts } from "@jobshield/shared/contracts";
 import { ArtifactsLoadError, loadArtifacts } from "./artifacts";
 import { computeWageRadar } from "./radar";
+import { charge as rateLimitCharge, clientKey as rateLimitKey } from "./rate_limit";
 import { recommend } from "./recommend";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -55,6 +56,20 @@ function notFound(message: string): Response {
   return json({ error: message }, 404);
 }
 
+function tooManyRequests(resetMs: number): Response {
+  return new Response(JSON.stringify({ error: "rate limit exceeded" }), {
+    status: 429,
+    headers: {
+      "content-type": "application/json",
+      "access-control-allow-origin": "*",
+      "retry-after": String(Math.ceil(resetMs / 1000)),
+    },
+  });
+}
+
+const SOURCE_CODE_MAX = 64; // arbitrary; longest known occ code is 26 chars.
+const PATH_CODE_MAX = 256; // /api/occupations/<code> — same cap as source.
+
 function buildOccupationSummaries(
   artifacts: PipelineArtifacts,
   radarRows: ReturnType<typeof computeWageRadar>,
@@ -97,6 +112,13 @@ export async function handleRequest(req: Request): Promise<Response> {
     });
   }
 
+  // Per-client rate limit. Applied before any work so a flooding client
+  // can't waste CPU on /api/recommend's Dijkstra.
+  const rl = rateLimitCharge(rateLimitKey(req));
+  if (!rl.ok) {
+    return tooManyRequests(rl.resetMs);
+  }
+
   try {
     if (path === "/api/occupations") {
       await getArtifacts();
@@ -104,6 +126,7 @@ export async function handleRequest(req: Request): Promise<Response> {
     }
     if (path.startsWith("/api/occupations/")) {
       const code = decodeURIComponent(path.slice("/api/occupations/".length));
+      if (code.length > PATH_CODE_MAX) return notFound("code too long");
       await getArtifacts();
       const summary = buildOccupationSummaries(getCached(), getRadarRows()).find(
         (o) => o.code === code,
@@ -114,6 +137,7 @@ export async function handleRequest(req: Request): Promise<Response> {
     if (path === "/api/recommend") {
       const source = url.searchParams.get("source");
       if (!source) return notFound("missing source param");
+      if (source.length > SOURCE_CODE_MAX) return notFound("source too long");
       const topNParam = url.searchParams.get("topN") ?? "5";
       const topN = Number(topNParam);
       if (!Number.isFinite(topN) || topN < 1 || topN > 50) {
