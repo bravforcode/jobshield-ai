@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Python deps (frozen)
+        working-directory: py
+        run: uv sync --frozen
+
+      - name: Generate mock data (deterministic)
+        working-directory: py
+        run: uv run python -m jobshield.data.mock_data
+
+      - name: Build artifacts
+        working-directory: py
+        run: uv run python -m jobshield.cli.build --mock --out ../data/artifacts.json
+
+      - name: Python tests
+        working-directory: py
+        run: uv run pytest -q
+
+      - name: Python lint (ruff)
+        working-directory: py
+        run: uv run ruff check .
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install JS deps
+        run: bun install --frozen-lockfile
+
+      - name: TypeScript tests
+        run: bun test
+
+      - name: TypeScript lint (biome)
+        run: bun run lint
+
+      - name: Smoke — start API and hit health
+        env:
+          JOBSHIELD_ARTIFACTS: data/artifacts.json
+          PORT: "3000"
+        run: |
+          bun run ts/api/src/index.ts &
+          pid=$!
+          for i in 1 2 3 4 5; do
+            if curl -sf http://localhost:3000/api/health >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -sf http://localhost:3000/api/health | grep -q '"ok":true'
+          curl -sf "http://localhost:3000/api/recommend?source=occ.data_entry&topN=2" | grep -q "junior_data_analyst"
+          kill $pid
