@@ -1,0 +1,356 @@
+"""Mock data generators for the JobShield AI pipeline (spec §9).
+
+18 occupations x 8-12 postings each = ~150-200 postings total. Hand-crafted
+so the spec §7 validation pairs (call_center -> customer_success, etc.) all
+naturally emerge with below-median distances. Posting text is Thai+EN mixed
+to mirror real Thai job-board content; skills are NOT pre-stored — they are
+extracted at load time by `extract_skills_llm` so the test also exercises
+the extractor end-to-end.
+
+Deterministic: same module => same postings, no randomness.
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+# (code, label, median_wage_THB, ai_displacement_risk_0_1, postings_texts)
+OCCUPATIONS: list[dict] = [
+    {
+        "code": "occ.call_center_agent",
+        "label": "Call center agent",
+        "wage": 14000,
+        "risk": 0.85,
+        "postings": [
+            "รับสายลูกค้า call center ตอบคำถามสินค้า สื่อสารดี communication customer_service",
+            "call center agent 12k+ สื่อสารภาษาอังกฤษ english thai ทำงานเป็นทีม teamwork",
+            "งาน call center รับเรื่องร้องเรียน customer_service problem_solving สลับกะ",
+            "call center outbound telemarketing ขายประกันทางโทรศัพท์ communication",
+            "agent ตอบแชท call center ให้ข้อมูลลูกค้า problem_solving customer_service",
+            "รับสาย call center ไทย-อังกฤษ bilingual english thai ไม่มีประสบการณ์ก็สอน",
+            "call center customer support สื่อสารดี communication teamwork ทำงาน shift",
+            "cs call center ตอบลูกค้า problem_solving communication สวัสดิการครบ",
+        ],
+    },
+    {
+        "code": "occ.customer_success",
+        "label": "Customer success specialist",
+        "wage": 22000,
+        "risk": 0.55,
+        "postings": [
+            "customer success ดูแลลูกค้า B2B communication problem_solving project_management",
+            "cs specialist ติดตามความพึงพอใจ customer_service communication excel",
+            "customer success manager 30k+ english project_management sales ต่ออายุ",
+            "success manager SaaS communication customer_service project_management english",
+            "cs onboarding ลูกค้าใหม่ communication problem_solving teamwork excel",
+            "customer success english thai communication sales project_management",
+            "ดูแลลูกค้า CRM customer_service sales communication english excel",
+            "customer success analyst excel data_analysis communication problem_solving",
+        ],
+    },
+    {
+        "code": "occ.factory_technician",
+        "label": "Factory technician",
+        "wage": 18000,
+        "risk": 0.70,
+        "postings": [
+            "ช่างเทคนิคโรงงาน manufacturing cnc electrical plc maintenance",
+            "factory technician lean manufacturing qa_testing mechanical electrical",
+            "ช่างซ่อมบำรุง cnc plc manufacturing lean teamwork",
+            "technician โรงงาน autocad electrical mechanical six_sigma quality_control",
+            "ช่างยนต์ plc electrical manufacturing cnc maintenance",
+            "factory tech qa_testing quality_control manufacturing lean six_sigma",
+            "technician manufacturing cnc mechanical electrical plc สลับกะ",
+            "ช่างโรงงาน autocad cnc manufacturing qa_testing quality_control",
+        ],
+    },
+    {
+        "code": "occ.qa_quality_control",
+        "label": "QA / Quality control",
+        "wage": 20000,
+        "risk": 0.50,
+        "postings": [
+            "qa quality control โรงงาน qa_testing quality_control manufacturing lean",
+            "qa tester qa_testing quality_control six_sigma manufacturing excel",
+            "ตรวจสอบคุณภาพ quality_control qa_testing manufacturing lean six_sigma",
+            "qa engineer qa_testing quality_control manufacturing project_management",
+            "qc inspector manufacturing quality_control six_sigma lean teamwork",
+            "qa analyst qa_testing quality_control manufacturing data_analysis excel",
+            "qa documentation qa_testing quality_control manufacturing project_management",
+            "qa leader qa_testing quality_control manufacturing lean six_sigma",
+            "qa supervisor qa_testing quality_control manufacturing lean excel",
+        ],
+    },
+    {
+        "code": "occ.cashier",
+        "label": "Cashier",
+        "wage": 12000,
+        "risk": 0.90,
+        "postings": [
+            "แคชเชียร์ cashier pos_system รับเงินสด customer_service",
+            "cashier ห้าง pos_system cashier communication teamwork",
+            "แคชเชียร์ 7-eleven pos_system cashier customer_service thai",
+            "cashier full-time pos_system cashier customer_service english",
+            "แคชเชียร์ร้านอาหาร pos_system cashier customer_service communication",
+            "cashier ปั๊มน้ำมัน pos_system cashier customer_service",
+            "แคชเชียร์ซุปเปอร์ pos_system cashier customer_service teamwork",
+            "cashier ร้านกาแฟ pos_system cashier customer_service communication",
+        ],
+    },
+    {
+        "code": "occ.retail_sales_assistant",
+        "label": "Retail sales assistant",
+        "wage": 13500,
+        "risk": 0.75,
+        "postings": [
+            "พนักงานขาย retail sales customer_service communication teamwork",
+            "sales assistant ห้าง sales customer_service communication english",
+            "พนักงานขายของ cashier pos_system customer_service sales",
+            "retail sales sales customer_service communication teamwork thai",
+            "ขายหน้าร้าน sales customer_service communication cashier pos_system",
+            "shop assistant sales customer_service teamwork communication english",
+            "พนักงานขายเสื้อผ้า sales customer_service communication",
+            "sales associate sales customer_service communication teamwork pos_system",
+        ],
+    },
+    {
+        "code": "occ.data_entry",
+        "label": "Data entry clerk",
+        "wage": 15000,
+        "risk": 0.95,
+        "postings": [
+            "data entry excel data_entry typing ใส่ข้อมูล thai english",
+            "พนักงาน data entry excel data_entry พิมพ์ดีด",
+            "data entry clerk excel data_entry communication teamwork",
+            "data entry accounting excel data_entry bookkeeping problem_solving",
+            "พิมพ์งาน data entry excel data_entry communication",
+            "data entry excel data_entry sql ฐานข้อมูล data_analysis",
+            "data entry officer excel data_entry english thai communication",
+            "data entry back office excel data_entry problem_solving teamwork",
+        ],
+    },
+    {
+        "code": "occ.junior_data_analyst",
+        "label": "Junior data analyst",
+        "wage": 35000,
+        "risk": 0.15,
+        "postings": [
+            "junior data analyst sql python excel data_analysis data_visualization",
+            "data analyst sql python excel data_analysis data_visualization english",
+            "นักวิเคราะห์ข้อมูล sql python excel data_analysis problem_solving",
+            "analyst sql python excel data_analysis data_visualization communication",
+            "data analyst sql python excel data_visualization data_analysis machine_learning",
+            "junior analyst sql python excel data_analysis english communication",
+            "data analyst sql python excel data_visualization problem_solving",
+            "analyst data sql python excel data_analysis data_visualization",
+        ],
+    },
+    {
+        "code": "occ.accounting_clerk",
+        "label": "Accounting clerk",
+        "wage": 18000,
+        "risk": 0.70,
+        "postings": [
+            "พนักงานบัญชี accounting excel bookkeeping data_entry tax",
+            "accounting clerk excel accounting bookkeeping data_entry problem_solving",
+            "บัญชี accounting excel bookkeeping tax payroll data_entry",
+            "accounting clerk accounting excel bookkeeping data_entry english",
+            "junior accountant accounting excel bookkeeping tax quickbooks",
+            "บัญชีต้นทุน accounting excel bookkeeping problem_solving data_entry",
+            "accounting officer accounting excel bookkeeping tax communication",
+            "ap/ar clerk accounting excel bookkeeping data_entry teamwork",
+        ],
+    },
+    {
+        "code": "occ.bookkeeper",
+        "label": "Bookkeeper",
+        "wage": 20000,
+        "risk": 0.60,
+        "postings": [
+            "bookkeeper bookkeeping accounting excel tax payroll data_entry",
+            "ทำบัญชี bookkeeping accounting excel tax quickbooks problem_solving",
+            "bookkeeper full set bookkeeping accounting excel tax english",
+            "ผู้ช่วยบัญชี bookkeeping accounting excel tax quickbooks",
+            "bookkeeper accounting excel bookkeeping tax data_entry communication",
+            "bookkeeper bookkeeping accounting excel tax payroll teamwork",
+            "bookkeeper remote bookkeeping accounting excel tax quickbooks",
+            "senior bookkeeper bookkeeping accounting excel tax payroll data_entry",
+        ],
+    },
+    {
+        "code": "occ.marketing_coordinator",
+        "label": "Marketing coordinator",
+        "wage": 28000,
+        "risk": 0.45,
+        "postings": [
+            "marketing coordinator marketing seo content_writing social_media communication",
+            "marketing exec marketing seo social_media content_writing english excel",
+            "ผู้ประสานงานการตลาด marketing project_management communication excel",
+            "marketing coordinator marketing seo social_media project_management copywriting",
+            "marketing assistant marketing social_media content_writing seo copywriting",
+            "marketing coordinator marketing seo content_writing social_media project_management",
+            "coordinator marketing marketing project_management communication excel",
+            "junior marketing marketing seo social_media content_writing copywriting",
+        ],
+    },
+    {
+        "code": "occ.digital_marketer",
+        "label": "Digital marketer",
+        "wage": 32000,
+        "risk": 0.35,
+        "postings": [
+            "digital marketer seo social_media marketing content_writing data_analysis copywriting",
+            "digital marketing seo social_media marketing data_analysis english excel",
+            "performance marketing seo social_media marketing data_analysis data_visualization",
+            "digital marketer seo social_media marketing copywriting english data_analysis",
+            "online marketing seo social_media marketing content_writing data_analysis",
+            "digital marketing seo social_media marketing copywriting project_management",
+            "digital marketer seo social_media marketing data_analysis communication",
+            "digital marketing manager seo social_media marketing data_visualization project_management",
+            "digital marketer seo social_media copywriting data_visualization marketing",
+        ],
+    },
+    {
+        "code": "occ.recruiter",
+        "label": "Recruiter",
+        "wage": 24000,
+        "risk": 0.40,
+        "postings": [
+            "recruiter recruitment hr interviewing english communication teamwork",
+            "พนักงานสรรหาบุคลากร recruitment hr interviewing problem_solving",
+            "recruiter IT recruitment hr interviewing english communication",
+            "hr recruiter recruitment hr interviewing communication excel",
+            "talent acquisition recruitment hr interviewing english communication",
+            "recruiter recruitment hr interviewing problem_solving project_management",
+            "junior recruiter recruitment hr interviewing teamwork communication",
+            "senior recruiter recruitment hr interviewing english problem_solving",
+        ],
+    },
+    {
+        "code": "occ.hr_generalist",
+        "label": "HR generalist",
+        "wage": 26000,
+        "risk": 0.30,
+        "postings": [
+            "hr generalist recruitment hr payroll communication english excel",
+            "hr officer recruitment hr payroll project_management communication",
+            "เจ้าหน้าที่ hr recruitment hr payroll excel communication",
+            "hr generalist recruitment hr payroll training problem_solving",
+            "hr business partner recruitment hr payroll english project_management",
+            "hr manager recruitment hr payroll project_management communication",
+            "hr generalist recruitment hr payroll excel data_entry teamwork",
+            "hr coordinator recruitment hr payroll project_management communication",
+            "hr specialist recruitment hr payroll english excel communication",
+            "hr generalist recruitment hr payroll interviewing problem_solving",
+        ],
+    },
+    {
+        "code": "occ.warehouse_worker",
+        "label": "Warehouse worker",
+        "wage": 15000,
+        "risk": 0.65,
+        "postings": [
+            "พนักงานคลัง warehouse inventory forklift logistics teamwork",
+            "warehouse worker warehouse inventory forklift logistics",
+            "คลังสินค้า warehouse inventory forklift logistics communication",
+            "warehouse staff warehouse inventory forklift teamwork thai",
+            "คนงานคลัง warehouse inventory forklift logistics english",
+            "warehouse warehouse inventory forklift logistics problem_solving",
+            "picker packer warehouse inventory forklift logistics communication",
+            "พนักงานขนของ warehouse inventory forklift logistics",
+        ],
+    },
+    {
+        "code": "occ.logistics_coordinator",
+        "label": "Logistics coordinator",
+        "wage": 25000,
+        "risk": 0.45,
+        "postings": [
+            "logistics coordinator logistics warehouse inventory project_management english",
+            "เจ้าหน้าที่ขนส่ง logistics warehouse inventory communication excel",
+            "logistics coordinator logistics warehouse inventory project_management communication",
+            "supply chain logistics warehouse inventory project_management excel",
+            "logistics admin logistics warehouse inventory excel communication",
+            "logistics manager logistics warehouse inventory project_management english",
+            "logistics coordinator logistics warehouse inventory problem_solving",
+            "logistics executive logistics warehouse inventory english excel",
+        ],
+    },
+    {
+        "code": "occ.translator",
+        "label": "Translator",
+        "wage": 22000,
+        "risk": 0.55,
+        "postings": [
+            "translator thai english translation content_writing communication",
+            "นักแปล thai english translation content_writing copywriting",
+            "translator freelance thai english translation content_writing",
+            "translator thai english translation copywriting communication",
+            "thai-english translator translation thai english content_writing",
+            "ล่าม thai english translation communication problem_solving",
+            "translator thai english translation copywriting project_management",
+            "junior translator thai english translation content_writing teamwork",
+            "translator thai english translation copywriting english communication",
+        ],
+    },
+    {
+        "code": "occ.content_writer",
+        "label": "Content writer",
+        "wage": 23000,
+        "risk": 0.50,
+        "postings": [
+            "content writer content_writing copywriting seo social_media english",
+            "นักเขียน content_writing copywriting seo social_media communication",
+            "content writer content_writing copywriting seo english thai",
+            "writer content_writing copywriting seo social_media project_management",
+            "content creator content_writing copywriting seo social_media english",
+            "content writer content_writing copywriting seo data_analysis",
+            "writer content_writing copywriting seo social_media communication",
+            "content specialist content_writing copywriting seo social_media excel",
+            "content writer content_writing copywriting seo english thai marketing",
+            "writer freelance content_writing copywriting seo social_media english",
+        ],
+    },
+]
+
+
+def build_all() -> dict:
+    """Return the full mock dataset dict (occupations + risk + wage)."""
+    return {
+        "occupations": OCCUPATIONS,
+        "wage_data": {o["code"]: o["wage"] for o in OCCUPATIONS},
+        "risk_scores": {o["code"]: o["risk"] for o in OCCUPATIONS},
+    }
+
+
+def write_to(data_dir: Path) -> dict[str, Path]:
+    """Write the three mock data files and return their paths."""
+    data_dir.mkdir(parents=True, exist_ok=True)
+    payload = build_all()
+    paths = {
+        "postings": data_dir / "job_postings.json",
+        "wage": data_dir / "wage_data.json",
+        "risk": data_dir / "risk_scores.json",
+    }
+    paths["postings"].write_text(
+        json.dumps(payload["occupations"], ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    paths["wage"].write_text(
+        json.dumps(payload["wage_data"], ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    paths["risk"].write_text(
+        json.dumps(payload["risk_scores"], ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return paths
+
+
+if __name__ == "__main__":
+    # Resolve relative to repo root (C:\jobsume), not the package directory.
+    # Path: data/mock_data.py -> data/ -> jobshield/ -> src/ -> py/ -> jobsume/
+    repo_root = Path(__file__).resolve().parents[4]
+    paths = write_to(repo_root / "data" / "mock")
+    for name, p in paths.items():
+        print(f"  {name}: {p}")
