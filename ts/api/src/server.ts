@@ -175,6 +175,19 @@ export async function handleRequest(req: Request): Promise<Response> {
       await getArtifacts();
       return json(getRadarRows());
     }
+    if (path === "/api/stats") {
+      await getArtifacts();
+      // Skill count: distinct skill_graph nodes. Edge count: undirected
+      // pairs (transition_graph.edges has 2 entries per pair).
+      const a = getCached();
+      const skills = a.skill_graph.nodes.length;
+      const undirected = a.transition_graph.edges.length / 2;
+      return json({
+        occupations: Object.keys(a.wage_data).length,
+        skills,
+        edges: undirected,
+      });
+    }
     if (path === "/api/health") {
       return json({ ok: true, artifacts_path: ARTIFACTS_PATH });
     }
