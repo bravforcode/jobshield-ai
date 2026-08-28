@@ -1,0 +1,6959 @@
+{
+  "skill_graph": {
+    "nodes": [
+      "accounting",
+      "autocad",
+      "bookkeeping",
+      "cashier",
+      "cnc",
+      "communication",
+      "content_writing",
+      "copywriting",
+      "customer_service",
+      "data_analysis",
+      "data_entry",
+      "data_visualization",
+      "electrical",
+      "english",
+      "excel",
+      "forklift",
+      "hr",
+      "interviewing",
+      "inventory",
+      "lean",
+      "logistics",
+      "machine_learning",
+      "manufacturing",
+      "marketing",
+      "mechanical",
+      "payroll",
+      "plc",
+      "pos_system",
+      "problem_solving",
+      "project_management",
+      "python",
+      "qa_testing",
+      "quality_control",
+      "quickbooks",
+      "recruitment",
+      "sales",
+      "seo",
+      "six_sigma",
+      "social_media",
+      "sql",
+      "tax",
+      "teamwork",
+      "telemarketing",
+      "thai",
+      "translation",
+      "warehouse"
+    ],
+    "freq": {
+      "communication": 54,
+      "customer_service": 38,
+      "thai": 19,
+      "teamwork": 21,
+      "english": 43,
+      "problem_solving": 21,
+      "telemarketing": 1,
+      "project_management": 23,
+      "excel": 53,
+      "sales": 11,
+      "data_analysis": 37,
+      "electrical": 5,
+      "manufacturing": 16,
+      "plc": 4,
+      "cnc": 5,
+      "qa_testing": 11,
+      "lean": 8,
+      "mechanical": 3,
+      "social_media": 28,
+      "autocad": 2,
+      "quality_control": 12,
+      "six_sigma": 6,
+      "cashier": 10,
+      "pos_system": 11,
+      "data_entry": 18,
+      "accounting": 17,
+      "bookkeeping": 17,
+      "sql": 9,
+      "python": 8,
+      "data_visualization": 9,
+      "machine_learning": 1,
+      "tax": 12,
+      "payroll": 14,
+      "quickbooks": 4,
+      "content_writing": 22,
+      "seo": 25,
+      "marketing": 18,
+      "copywriting": 21,
+      "recruitment": 18,
+      "interviewing": 9,
+      "hr": 18,
+      "inventory": 16,
+      "logistics": 15,
+      "forklift": 8,
+      "warehouse": 16,
+      "translation": 9
+    },
+    "edges": [
+      {
+        "a": "communication",
+        "b": "customer_service",
+        "ppmi": 0.38644190407825524
+      },
+      {
+        "a": "english",
+        "b": "thai",
+        "ppmi": 1.0842294641947026
+      },
+      {
+        "a": "teamwork",
+        "b": "thai",
+        "ppmi": 0.4146127810449516
+      },
+      {
+        "a": "customer_service",
+        "b": "problem_solving",
+        "ppmi": 0.12693070859317065
+      },
+      {
+        "a": "communication",
+        "b": "telemarketing",
+        "ppmi": 1.02829579025065
+      },
+      {
+        "a": "communication",
+        "b": "teamwork",
+        "ppmi": 0.28635844552127276
+      },
+      {
+        "a": "communication",
+        "b": "project_management",
+        "ppmi": 0.09002615165771961
+      },
+      {
+        "a": "communication",
+        "b": "excel",
+        "ppmi": 0.0024428558649684106
+      },
+      {
+        "a": "english",
+        "b": "project_management",
+        "ppmi": 0.06649565424752546
+      },
+      {
+        "a": "english",
+        "b": "sales",
+        "ppmi": 0.4676223607570918
+      },
+      {
+        "a": "project_management",
+        "b": "sales",
+        "ppmi": 0.1770375286473496
+      },
+      {
+        "a": "communication",
+        "b": "english",
+        "ppmi": 0.039684396796868734
+      },
+      {
+        "a": "customer_service",
+        "b": "teamwork",
+        "ppmi": 0.28108138842042896
+      },
+      {
+        "a": "excel",
+        "b": "problem_solving",
+        "ppmi": 0.19969006287559896
+      },
+      {
+        "a": "communication",
+        "b": "sales",
+        "ppmi": 0.8276250947884989
+      },
+      {
+        "a": "communication",
+        "b": "thai",
+        "ppmi": 0.029766960139522763
+      },
+      {
+        "a": "sales",
+        "b": "thai",
+        "ppmi": 0.36809276541005864
+      },
+      {
+        "a": "customer_service",
+        "b": "sales",
+        "ppmi": 1.1790229816263873
+      },
+      {
+        "a": "data_analysis",
+        "b": "excel",
+        "ppmi": 0.803365840605052
+      },
+      {
+        "a": "data_analysis",
+        "b": "problem_solving",
+        "ppmi": 0.30774963550259044
+      },
+      {
+        "a": "cnc",
+        "b": "electrical",
+        "ppmi": 2.8970163006148333
+      },
+      {
+        "a": "cnc",
+        "b": "manufacturing",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "cnc",
+        "b": "plc",
+        "ppmi": 3.407841924380824
+      },
+      {
+        "a": "electrical",
+        "b": "manufacturing",
+        "ppmi": 2.0215475632609334
+      },
+      {
+        "a": "electrical",
+        "b": "plc",
+        "ppmi": 3.120159851929043
+      },
+      {
+        "a": "manufacturing",
+        "b": "plc",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "electrical",
+        "b": "lean",
+        "ppmi": 1.328400382700988
+      },
+      {
+        "a": "electrical",
+        "b": "mechanical",
+        "ppmi": 3.407841924380824
+      },
+      {
+        "a": "electrical",
+        "b": "qa_testing",
+        "ppmi": 1.0099466515824533
+      },
+      {
+        "a": "lean",
+        "b": "manufacturing",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "lean",
+        "b": "mechanical",
+        "ppmi": 1.8392260064669785
+      },
+      {
+        "a": "lean",
+        "b": "qa_testing",
+        "ppmi": 2.331702491564773
+      },
+      {
+        "a": "manufacturing",
+        "b": "mechanical",
+        "ppmi": 1.8392260064669785
+      },
+      {
+        "a": "manufacturing",
+        "b": "qa_testing",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "mechanical",
+        "b": "qa_testing",
+        "ppmi": 1.520772275348444
+      },
+      {
+        "a": "cnc",
+        "b": "lean",
+        "ppmi": 1.328400382700988
+      },
+      {
+        "a": "cnc",
+        "b": "teamwork",
+        "ppmi": 0.3633194866574008
+      },
+      {
+        "a": "lean",
+        "b": "plc",
+        "ppmi": 1.5515439340151977
+      },
+      {
+        "a": "lean",
+        "b": "teamwork",
+        "ppmi": 0.5864630379716107
+      },
+      {
+        "a": "plc",
+        "b": "teamwork",
+        "ppmi": 0.5864630379716107
+      },
+      {
+        "a": "autocad",
+        "b": "electrical",
+        "ppmi": 2.714694743820879
+      },
+      {
+        "a": "autocad",
+        "b": "mechanical",
+        "ppmi": 3.2255203675868693
+      },
+      {
+        "a": "autocad",
+        "b": "quality_control",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "autocad",
+        "b": "six_sigma",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "autocad",
+        "b": "social_media",
+        "ppmi": 0.991928146079775
+      },
+      {
+        "a": "electrical",
+        "b": "quality_control",
+        "ppmi": 0.9229352745928234
+      },
+      {
+        "a": "electrical",
+        "b": "six_sigma",
+        "ppmi": 1.6160824551527688
+      },
+      {
+        "a": "electrical",
+        "b": "social_media",
+        "ppmi": 0.07563741420561998
+      },
+      {
+        "a": "mechanical",
+        "b": "quality_control",
+        "ppmi": 1.4337608983588144
+      },
+      {
+        "a": "mechanical",
+        "b": "six_sigma",
+        "ppmi": 2.1269080789187598
+      },
+      {
+        "a": "mechanical",
+        "b": "social_media",
+        "ppmi": 0.5864630379716106
+      },
+      {
+        "a": "quality_control",
+        "b": "six_sigma",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "quality_control",
+        "b": "social_media",
+        "ppmi": 0.9919281460797752
+      },
+      {
+        "a": "six_sigma",
+        "b": "social_media",
+        "ppmi": 1.6850753266397205
+      },
+      {
+        "a": "lean",
+        "b": "quality_control",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "lean",
+        "b": "six_sigma",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "lean",
+        "b": "social_media",
+        "ppmi": 0.991928146079775
+      },
+      {
+        "a": "manufacturing",
+        "b": "quality_control",
+        "ppmi": 2.1576797375855135
+      },
+      {
+        "a": "manufacturing",
+        "b": "six_sigma",
+        "ppmi": 2.0623695577811887
+      },
+      {
+        "a": "manufacturing",
+        "b": "social_media",
+        "ppmi": 0.5219245168340396
+      },
+      {
+        "a": "qa_testing",
+        "b": "quality_control",
+        "ppmi": 2.437063007222599
+      },
+      {
+        "a": "qa_testing",
+        "b": "six_sigma",
+        "ppmi": 2.2139194559083895
+      },
+      {
+        "a": "qa_testing",
+        "b": "social_media",
+        "ppmi": 0.6734744149612405
+      },
+      {
+        "a": "cnc",
+        "b": "mechanical",
+        "ppmi": 2.3092296357127142
+      },
+      {
+        "a": "mechanical",
+        "b": "plc",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "autocad",
+        "b": "cnc",
+        "ppmi": 2.714694743820879
+      },
+      {
+        "a": "autocad",
+        "b": "manufacturing",
+        "ppmi": 1.5515439340151977
+      },
+      {
+        "a": "autocad",
+        "b": "qa_testing",
+        "ppmi": 1.9262373834566087
+      },
+      {
+        "a": "cnc",
+        "b": "qa_testing",
+        "ppmi": 1.0099466515824533
+      },
+      {
+        "a": "cnc",
+        "b": "quality_control",
+        "ppmi": 0.9229352745928234
+      },
+      {
+        "a": "project_management",
+        "b": "qa_testing",
+        "ppmi": 0.1770375286473496
+      },
+      {
+        "a": "project_management",
+        "b": "quality_control",
+        "ppmi": 0.09002615165771961
+      },
+      {
+        "a": "six_sigma",
+        "b": "teamwork",
+        "ppmi": 0.1809979298634463
+      },
+      {
+        "a": "cashier",
+        "b": "customer_service",
+        "ppmi": 1.274333161430712
+      },
+      {
+        "a": "cashier",
+        "b": "pos_system",
+        "ppmi": 2.6193845640165536
+      },
+      {
+        "a": "customer_service",
+        "b": "pos_system",
+        "ppmi": 1.2843834972842139
+      },
+      {
+        "a": "cashier",
+        "b": "communication",
+        "ppmi": 0.11200505837649484
+      },
+      {
+        "a": "cashier",
+        "b": "teamwork",
+        "ppmi": 0.3633194866574008
+      },
+      {
+        "a": "communication",
+        "b": "pos_system",
+        "ppmi": 0.2398384298863799
+      },
+      {
+        "a": "pos_system",
+        "b": "teamwork",
+        "ppmi": 0.6734744149612406
+      },
+      {
+        "a": "sales",
+        "b": "teamwork",
+        "ppmi": 0.9611564874130215
+      },
+      {
+        "a": "cashier",
+        "b": "sales",
+        "ppmi": 1.0099466515824533
+      },
+      {
+        "a": "pos_system",
+        "b": "sales",
+        "ppmi": 1.3201015798862932
+      },
+      {
+        "a": "data_analysis",
+        "b": "data_entry",
+        "ppmi": 1.4063619241706997
+      },
+      {
+        "a": "data_entry",
+        "b": "excel",
+        "ppmi": 1.0469879232628025
+      },
+      {
+        "a": "data_entry",
+        "b": "teamwork",
+        "ppmi": 0.4686800023152274
+      },
+      {
+        "a": "accounting",
+        "b": "bookkeeping",
+        "ppmi": 2.184066492758708
+      },
+      {
+        "a": "accounting",
+        "b": "data_analysis",
+        "ppmi": 0.8757336731085295
+      },
+      {
+        "a": "accounting",
+        "b": "data_entry",
+        "ppmi": 1.5962798278565893
+      },
+      {
+        "a": "accounting",
+        "b": "excel",
+        "ppmi": 1.0469879232628023
+      },
+      {
+        "a": "accounting",
+        "b": "problem_solving",
+        "ppmi": 0.5258384161551759
+      },
+      {
+        "a": "bookkeeping",
+        "b": "data_analysis",
+        "ppmi": 0.8757336731085295
+      },
+      {
+        "a": "bookkeeping",
+        "b": "data_entry",
+        "ppmi": 1.5962798278565893
+      },
+      {
+        "a": "bookkeeping",
+        "b": "excel",
+        "ppmi": 1.0469879232628023
+      },
+      {
+        "a": "bookkeeping",
+        "b": "problem_solving",
+        "ppmi": 0.5258384161551759
+      },
+      {
+        "a": "data_entry",
+        "b": "problem_solving",
+        "ppmi": 0.4686800023152274
+      },
+      {
+        "a": "data_analysis",
+        "b": "sql",
+        "ppmi": 1.4063619241706997
+      },
+      {
+        "a": "excel",
+        "b": "sql",
+        "ppmi": 1.0469879232628025
+      },
+      {
+        "a": "data_analysis",
+        "b": "data_visualization",
+        "ppmi": 1.4063619241706997
+      },
+      {
+        "a": "data_analysis",
+        "b": "python",
+        "ppmi": 1.4063619241706997
+      },
+      {
+        "a": "data_visualization",
+        "b": "excel",
+        "ppmi": 0.6415228151546383
+      },
+      {
+        "a": "data_visualization",
+        "b": "python",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "data_visualization",
+        "b": "sql",
+        "ppmi": 2.4145901513705406
+      },
+      {
+        "a": "excel",
+        "b": "python",
+        "ppmi": 1.0469879232628023
+      },
+      {
+        "a": "python",
+        "b": "sql",
+        "ppmi": 2.820055259478705
+      },
+      {
+        "a": "problem_solving",
+        "b": "python",
+        "ppmi": 0.5864630379716107
+      },
+      {
+        "a": "problem_solving",
+        "b": "sql",
+        "ppmi": 0.4686800023152274
+      },
+      {
+        "a": "data_analysis",
+        "b": "machine_learning",
+        "ppmi": 1.4063619241706997
+      },
+      {
+        "a": "data_visualization",
+        "b": "machine_learning",
+        "ppmi": 2.820055259478705
+      },
+      {
+        "a": "excel",
+        "b": "machine_learning",
+        "ppmi": 1.0469879232628023
+      },
+      {
+        "a": "machine_learning",
+        "b": "python",
+        "ppmi": 2.9378382951350885
+      },
+      {
+        "a": "machine_learning",
+        "b": "sql",
+        "ppmi": 2.820055259478705
+      },
+      {
+        "a": "accounting",
+        "b": "tax",
+        "ppmi": 2.184066492758708
+      },
+      {
+        "a": "bookkeeping",
+        "b": "tax",
+        "ppmi": 2.184066492758708
+      },
+      {
+        "a": "data_analysis",
+        "b": "tax",
+        "ppmi": 0.5308931868168
+      },
+      {
+        "a": "data_entry",
+        "b": "tax",
+        "ppmi": 1.2514393415648597
+      },
+      {
+        "a": "excel",
+        "b": "tax",
+        "ppmi": 1.0469879232628023
+      },
+      {
+        "a": "accounting",
+        "b": "payroll",
+        "ppmi": 0.9313035242633402
+      },
+      {
+        "a": "bookkeeping",
+        "b": "payroll",
+        "ppmi": 0.9313035242633402
+      },
+      {
+        "a": "data_analysis",
+        "b": "payroll",
+        "ppmi": 0.1535989556753318
+      },
+      {
+        "a": "data_entry",
+        "b": "payroll",
+        "ppmi": 0.8741451104233916
+      },
+      {
+        "a": "excel",
+        "b": "payroll",
+        "ppmi": 0.48737213532737966
+      },
+      {
+        "a": "payroll",
+        "b": "tax",
+        "ppmi": 1.2796102185315559
+      },
+      {
+        "a": "accounting",
+        "b": "quickbooks",
+        "ppmi": 2.184066492758708
+      },
+      {
+        "a": "bookkeeping",
+        "b": "quickbooks",
+        "ppmi": 2.184066492758708
+      },
+      {
+        "a": "excel",
+        "b": "quickbooks",
+        "ppmi": 1.0469879232628023
+      },
+      {
+        "a": "quickbooks",
+        "b": "tax",
+        "ppmi": 2.532373187026924
+      },
+      {
+        "a": "problem_solving",
+        "b": "quickbooks",
+        "ppmi": 0.5864630379716107
+      },
+      {
+        "a": "payroll",
+        "b": "teamwork",
+        "ppmi": 0.026847250036188056
+      },
+      {
+        "a": "content_writing",
+        "b": "marketing",
+        "ppmi": 1.1153071672402797
+      },
+      {
+        "a": "content_writing",
+        "b": "seo",
+        "ppmi": 1.5405749026446238
+      },
+      {
+        "a": "content_writing",
+        "b": "social_media",
+        "ppmi": 1.2330902028966633
+      },
+      {
+        "a": "marketing",
+        "b": "seo",
+        "ppmi": 1.68062097629034
+      },
+      {
+        "a": "marketing",
+        "b": "social_media",
+        "ppmi": 1.5027537698457656
+      },
+      {
+        "a": "seo",
+        "b": "social_media",
+        "ppmi": 1.5572419551298353
+      },
+      {
+        "a": "content_writing",
+        "b": "english",
+        "ppmi": 0.5629325405614165
+      },
+      {
+        "a": "english",
+        "b": "seo",
+        "ppmi": 0.11664543793299709
+      },
+      {
+        "a": "marketing",
+        "b": "project_management",
+        "ppmi": 0.7831733322176652
+      },
+      {
+        "a": "copywriting",
+        "b": "marketing",
+        "ppmi": 1.1618271828751727
+      },
+      {
+        "a": "copywriting",
+        "b": "project_management",
+        "ppmi": 0.2235575442822423
+      },
+      {
+        "a": "copywriting",
+        "b": "seo",
+        "ppmi": 1.5870949182795169
+      },
+      {
+        "a": "copywriting",
+        "b": "social_media",
+        "ppmi": 1.279610218531556
+      },
+      {
+        "a": "project_management",
+        "b": "seo",
+        "ppmi": 0.2723477084516742
+      },
+      {
+        "a": "project_management",
+        "b": "social_media",
+        "ppmi": 0.159019023144671
+      },
+      {
+        "a": "content_writing",
+        "b": "copywriting",
+        "ppmi": 1.5207722753484443
+      },
+      {
+        "a": "data_analysis",
+        "b": "marketing",
+        "ppmi": 0.5954317079543711
+      },
+      {
+        "a": "data_analysis",
+        "b": "seo",
+        "ppmi": 0.38471067663871844
+      },
+      {
+        "a": "data_analysis",
+        "b": "social_media",
+        "ppmi": 0.1535989556753318
+      },
+      {
+        "a": "data_visualization",
+        "b": "marketing",
+        "ppmi": 1.02829579025065
+      },
+      {
+        "a": "data_visualization",
+        "b": "seo",
+        "ppmi": 0.6997917232786138
+      },
+      {
+        "a": "data_visualization",
+        "b": "social_media",
+        "ppmi": 0.5864630379716107
+      },
+      {
+        "a": "copywriting",
+        "b": "english",
+        "ppmi": 0.5141423763919848
+      },
+      {
+        "a": "communication",
+        "b": "hr",
+        "ppmi": 0.5358193051528558
+      },
+      {
+        "a": "communication",
+        "b": "interviewing",
+        "ppmi": 0.440509125348531
+      },
+      {
+        "a": "communication",
+        "b": "recruitment",
+        "ppmi": 0.5358193051528558
+      },
+      {
+        "a": "english",
+        "b": "hr",
+        "ppmi": 0.31161811228051045
+      },
+      {
+        "a": "english",
+        "b": "interviewing",
+        "ppmi": 0.44514950490503297
+      },
+      {
+        "a": "english",
+        "b": "recruitment",
+        "ppmi": 0.31161811228051045
+      },
+      {
+        "a": "hr",
+        "b": "interviewing",
+        "ppmi": 2.1269080789187598
+      },
+      {
+        "a": "hr",
+        "b": "recruitment",
+        "ppmi": 2.1269080789187598
+      },
+      {
+        "a": "hr",
+        "b": "teamwork",
+        "ppmi": 0.18099792986344648
+      },
+      {
+        "a": "interviewing",
+        "b": "recruitment",
+        "ppmi": 2.1269080789187598
+      },
+      {
+        "a": "interviewing",
+        "b": "teamwork",
+        "ppmi": 0.4686800023152274
+      },
+      {
+        "a": "recruitment",
+        "b": "teamwork",
+        "ppmi": 0.18099792986344648
+      },
+      {
+        "a": "hr",
+        "b": "problem_solving",
+        "ppmi": 0.6918235536294373
+      },
+      {
+        "a": "interviewing",
+        "b": "problem_solving",
+        "ppmi": 1.1618271828751727
+      },
+      {
+        "a": "problem_solving",
+        "b": "recruitment",
+        "ppmi": 0.6918235536294373
+      },
+      {
+        "a": "hr",
+        "b": "project_management",
+        "ppmi": 0.6008517754237105
+      },
+      {
+        "a": "project_management",
+        "b": "recruitment",
+        "ppmi": 0.6008517754237105
+      },
+      {
+        "a": "communication",
+        "b": "payroll",
+        "ppmi": 0.1809979298634463
+      },
+      {
+        "a": "hr",
+        "b": "payroll",
+        "ppmi": 1.7904358422975468
+      },
+      {
+        "a": "payroll",
+        "b": "recruitment",
+        "ppmi": 1.7904358422975468
+      },
+      {
+        "a": "payroll",
+        "b": "project_management",
+        "ppmi": 0.6290226523904067
+      },
+      {
+        "a": "payroll",
+        "b": "problem_solving",
+        "ppmi": 0.026847250036188056
+      },
+      {
+        "a": "interviewing",
+        "b": "payroll",
+        "ppmi": 0.1809979298634463
+      },
+      {
+        "a": "customer_service",
+        "b": "forklift",
+        "ppmi": 1.246162284464016
+      },
+      {
+        "a": "customer_service",
+        "b": "inventory",
+        "ppmi": 1.3151551559509673
+      },
+      {
+        "a": "customer_service",
+        "b": "logistics",
+        "ppmi": 1.3796936770885386
+      },
+      {
+        "a": "customer_service",
+        "b": "warehouse",
+        "ppmi": 1.3151551559509673
+      },
+      {
+        "a": "forklift",
+        "b": "inventory",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "forklift",
+        "b": "logistics",
+        "ppmi": 2.175698243088192
+      },
+      {
+        "a": "forklift",
+        "b": "teamwork",
+        "ppmi": 0.5864630379716107
+      },
+      {
+        "a": "forklift",
+        "b": "warehouse",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "inventory",
+        "b": "logistics",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "inventory",
+        "b": "warehouse",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "logistics",
+        "b": "warehouse",
+        "ppmi": 2.244691114575143
+      },
+      {
+        "a": "inventory",
+        "b": "project_management",
+        "ppmi": 0.495491259765884
+      },
+      {
+        "a": "logistics",
+        "b": "project_management",
+        "ppmi": 0.5600297809034551
+      },
+      {
+        "a": "project_management",
+        "b": "warehouse",
+        "ppmi": 0.495491259765884
+      },
+      {
+        "a": "communication",
+        "b": "translation",
+        "ppmi": 0.2173655740343211
+      },
+      {
+        "a": "content_writing",
+        "b": "thai",
+        "ppmi": 0.9277085533454813
+      },
+      {
+        "a": "content_writing",
+        "b": "translation",
+        "ppmi": 1.3384507185544896
+      },
+      {
+        "a": "english",
+        "b": "translation",
+        "ppmi": 1.2560797211213617
+      },
+      {
+        "a": "thai",
+        "b": "translation",
+        "ppmi": 2.072840857648484
+      },
+      {
+        "a": "copywriting",
+        "b": "thai",
+        "ppmi": 0.820077889153116
+      },
+      {
+        "a": "copywriting",
+        "b": "translation",
+        "ppmi": 1.1618271828751727
+      }
+    ]
+  },
+  "transition_graph": {
+    "nodes": [
+      "occ.accounting_clerk",
+      "occ.bookkeeper",
+      "occ.call_center_agent",
+      "occ.cashier",
+      "occ.content_writer",
+      "occ.customer_success",
+      "occ.data_entry",
+      "occ.digital_marketer",
+      "occ.factory_technician",
+      "occ.hr_generalist",
+      "occ.junior_data_analyst",
+      "occ.logistics_coordinator",
+      "occ.marketing_coordinator",
+      "occ.qa_quality_control",
+      "occ.recruiter",
+      "occ.retail_sales_assistant",
+      "occ.translator",
+      "occ.warehouse_worker"
+    ],
+    "edges": [
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "problem_solving",
+          "english",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "problem_solving",
+          "english",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.cashier",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "thai",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "thai",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "teamwork",
+          "english",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "teamwork",
+          "english",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.data_entry",
+        "skill_distance": 0.1070328232272928,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.1070328232272928,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.6529428663241388,
+        "shared_skills": [
+          "english",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.6529428663241388,
+        "shared_skills": [
+          "english",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.6483645445485573,
+        "shared_skills": [
+          "problem_solving",
+          "english",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.6483645445485573,
+        "shared_skills": [
+          "problem_solving",
+          "english",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.7221635334971919,
+        "shared_skills": [
+          "english",
+          "problem_solving",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.7221635334971919,
+        "shared_skills": [
+          "english",
+          "problem_solving",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.6503166150758729,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.6503166150758729,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.7697768767708304,
+        "shared_skills": [
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.7697768767708304,
+        "shared_skills": [
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.recruiter",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.18714668379883737,
+        "shared_skills": [
+          "communication",
+          "english",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.18714668379883737,
+        "shared_skills": [
+          "communication",
+          "english",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.017495669959029847,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.017495669959029847,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.020489211233951532,
+        "shared_skills": [
+          "customer_service",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.020489211233951532,
+        "shared_skills": [
+          "customer_service",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.translator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "thai",
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "thai",
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.call_center_agent",
+        "target": "occ.content_writer",
+        "skill_distance": 0.3763361095125275,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.call_center_agent",
+        "skill_distance": 0.3763361095125275,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.6459538545158268,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.customer_success",
+        "skill_distance": 0.6459538545158268,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.cashier",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "thai",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "thai",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "sales",
+          "communication",
+          "english",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "sales",
+          "communication",
+          "english",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.data_entry",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "thai",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "thai",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "english",
+          "data_analysis",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "english",
+          "data_analysis",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "problem_solving",
+          "data_analysis",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "problem_solving",
+          "data_analysis",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "english",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "english",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.26021144200486357,
+        "shared_skills": [
+          "project_management",
+          "excel",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.customer_success",
+        "skill_distance": 0.26021144200486357,
+        "shared_skills": [
+          "project_management",
+          "excel",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.4348165989585797,
+        "shared_skills": [
+          "english",
+          "data_analysis",
+          "project_management",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.customer_success",
+        "skill_distance": 0.4348165989585797,
+        "shared_skills": [
+          "english",
+          "data_analysis",
+          "project_management",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.recruiter",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "communication",
+          "excel",
+          "project_management",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "communication",
+          "excel",
+          "project_management",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "excel",
+          "project_management",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "excel",
+          "project_management",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.translator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication",
+          "problem_solving",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.customer_success",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication",
+          "problem_solving",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.customer_success",
+        "target": "occ.content_writer",
+        "skill_distance": 0.2504293869063927,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.customer_success",
+        "skill_distance": 0.2504293869063927,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.factory_technician",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "manufacturing",
+          "quality_control",
+          "qa_testing",
+          "lean",
+          "six_sigma"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.factory_technician",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "manufacturing",
+          "quality_control",
+          "qa_testing",
+          "lean",
+          "six_sigma"
+        ]
+      },
+      {
+        "source": "occ.factory_technician",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.6527927242497853,
+        "shared_skills": [
+          "social_media"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.factory_technician",
+        "skill_distance": 0.6527927242497853,
+        "shared_skills": [
+          "social_media"
+        ]
+      },
+      {
+        "source": "occ.factory_technician",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.6249783601016478,
+        "shared_skills": [
+          "social_media"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.factory_technician",
+        "skill_distance": 0.6249783601016478,
+        "shared_skills": [
+          "social_media"
+        ]
+      },
+      {
+        "source": "occ.factory_technician",
+        "target": "occ.content_writer",
+        "skill_distance": 0.6895044571019165,
+        "shared_skills": [
+          "social_media"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.factory_technician",
+        "skill_distance": 0.6895044571019165,
+        "shared_skills": [
+          "social_media"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.data_entry",
+        "skill_distance": 0.6518555003022879,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.6518555003022879,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.6579088429608766,
+        "shared_skills": [
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.6579088429608766,
+        "shared_skills": [
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.6184175406667972,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.6184175406667972,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.6251758253772555,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.6251758253772555,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.22045418756593538,
+        "shared_skills": [
+          "social_media",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.22045418756593538,
+        "shared_skills": [
+          "social_media",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.23347524477419568,
+        "shared_skills": [
+          "social_media",
+          "project_management",
+          "data_analysis",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.23347524477419568,
+        "shared_skills": [
+          "social_media",
+          "project_management",
+          "data_analysis",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.recruiter",
+        "skill_distance": 0.8419063369094151,
+        "shared_skills": [
+          "excel",
+          "teamwork",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.8419063369094151,
+        "shared_skills": [
+          "excel",
+          "teamwork",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.6400561489261565,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.6400561489261565,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "data_analysis",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.7654466235963767,
+        "shared_skills": [
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.7654466235963767,
+        "shared_skills": [
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.qa_quality_control",
+        "target": "occ.content_writer",
+        "skill_distance": 0.419181125119662,
+        "shared_skills": [
+          "social_media",
+          "excel",
+          "data_analysis",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.qa_quality_control",
+        "skill_distance": 0.419181125119662,
+        "shared_skills": [
+          "social_media",
+          "excel",
+          "data_analysis",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "pos_system",
+          "customer_service",
+          "cashier",
+          "communication",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.cashier",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "pos_system",
+          "customer_service",
+          "cashier",
+          "communication",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.data_entry",
+        "skill_distance": 0.6721910552488655,
+        "shared_skills": [
+          "communication",
+          "thai",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.cashier",
+        "skill_distance": 0.6721910552488655,
+        "shared_skills": [
+          "communication",
+          "thai",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.8230322329798692,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.cashier",
+        "skill_distance": 0.8230322329798692,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.recruiter",
+        "skill_distance": 0.6962242549635477,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.cashier",
+        "skill_distance": 0.6962242549635477,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.744629576063773,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.cashier",
+        "skill_distance": 0.744629576063773,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.07453416738016405,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.cashier",
+        "skill_distance": 0.07453416738016405,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.09279640979762582,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.cashier",
+        "skill_distance": 0.09279640979762582,
+        "shared_skills": [
+          "customer_service",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.translator",
+        "skill_distance": 0.6535068621635051,
+        "shared_skills": [
+          "communication",
+          "thai",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.cashier",
+        "skill_distance": 0.6535068621635051,
+        "shared_skills": [
+          "communication",
+          "thai",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.cashier",
+        "target": "occ.content_writer",
+        "skill_distance": 0.7840750395012378,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.cashier",
+        "skill_distance": 0.7840750395012378,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.data_entry",
+        "skill_distance": 0.3726084944661212,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.3726084944661212,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork",
+          "thai"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.8106188221694502,
+        "shared_skills": [
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.8106188221694502,
+        "shared_skills": [
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.824327629714275,
+        "shared_skills": [
+          "english",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.824327629714275,
+        "shared_skills": [
+          "english",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.843958017381899,
+        "shared_skills": [
+          "english",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.843958017381899,
+        "shared_skills": [
+          "english",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.7158529313086943,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.7158529313086943,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.8179510149300712,
+        "shared_skills": [
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.8179510149300712,
+        "shared_skills": [
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.recruiter",
+        "skill_distance": 0.3276463172534435,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.3276463172534435,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.3931533274940555,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.3931533274940555,
+        "shared_skills": [
+          "communication",
+          "english",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "thai",
+          "communication",
+          "teamwork",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "customer_service",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.translator",
+        "skill_distance": 0.3082324494937905,
+        "shared_skills": [
+          "english",
+          "communication",
+          "thai",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.3082324494937905,
+        "shared_skills": [
+          "english",
+          "communication",
+          "thai",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.retail_sales_assistant",
+        "target": "occ.content_writer",
+        "skill_distance": 0.5917881403881438,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.retail_sales_assistant",
+        "skill_distance": 0.5917881403881438,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "sql",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.data_entry",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "sql",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "data_entry",
+          "excel",
+          "data_analysis",
+          "bookkeeping",
+          "accounting"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.data_entry",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "data_entry",
+          "excel",
+          "data_analysis",
+          "bookkeeping",
+          "accounting"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_entry",
+          "data_analysis",
+          "bookkeeping",
+          "accounting"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.data_entry",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_entry",
+          "data_analysis",
+          "bookkeeping",
+          "accounting"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.41878943984482386,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.data_entry",
+        "skill_distance": 0.41878943984482386,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.07888012853116932,
+        "shared_skills": [
+          "data_analysis",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.data_entry",
+        "skill_distance": 0.07888012853116932,
+        "shared_skills": [
+          "data_analysis",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.recruiter",
+        "skill_distance": 0.24301400085478697,
+        "shared_skills": [
+          "communication",
+          "english",
+          "problem_solving",
+          "teamwork",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.data_entry",
+        "skill_distance": 0.24301400085478697,
+        "shared_skills": [
+          "communication",
+          "english",
+          "problem_solving",
+          "teamwork",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "english",
+          "problem_solving",
+          "data_entry"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.data_entry",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "english",
+          "problem_solving",
+          "data_entry"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.7622772207277163,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.data_entry",
+        "skill_distance": 0.7622772207277163,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.583443210564351,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.data_entry",
+        "skill_distance": 0.583443210564351,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.translator",
+        "skill_distance": 0.19661818127978714,
+        "shared_skills": [
+          "thai",
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.data_entry",
+        "skill_distance": 0.19661818127978714,
+        "shared_skills": [
+          "thai",
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.data_entry",
+        "target": "occ.content_writer",
+        "skill_distance": 0.4024609036413662,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.data_entry",
+        "skill_distance": 0.4024609036413662,
+        "shared_skills": [
+          "english",
+          "thai",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "problem_solving",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "problem_solving",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "english",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "data_analysis",
+          "english",
+          "problem_solving",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.395088458915418,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.395088458915418,
+        "shared_skills": [
+          "excel",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "data_analysis",
+          "data_visualization",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "data_analysis",
+          "data_visualization",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.recruiter",
+        "skill_distance": 0.5802666890196335,
+        "shared_skills": [
+          "english",
+          "problem_solving",
+          "communication",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.5802666890196335,
+        "shared_skills": [
+          "english",
+          "problem_solving",
+          "communication",
+          "excel"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.3049200697470642,
+        "shared_skills": [
+          "excel",
+          "english",
+          "problem_solving",
+          "communication",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.3049200697470642,
+        "shared_skills": [
+          "excel",
+          "english",
+          "problem_solving",
+          "communication",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.6091614464452514,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.6091614464452514,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.translator",
+        "skill_distance": 0.7434117934991967,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.7434117934991967,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.junior_data_analyst",
+        "target": "occ.content_writer",
+        "skill_distance": 0.6018806767438836,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.junior_data_analyst",
+        "skill_distance": 0.6018806767438836,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "bookkeeping",
+          "accounting",
+          "excel",
+          "tax",
+          "data_entry"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "bookkeeping",
+          "accounting",
+          "excel",
+          "tax",
+          "data_entry"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.5768429408540703,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.5768429408540703,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.268729132307141,
+        "shared_skills": [
+          "data_analysis",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.268729132307141,
+        "shared_skills": [
+          "data_analysis",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.recruiter",
+        "skill_distance": 0.5467720264167968,
+        "shared_skills": [
+          "problem_solving",
+          "english",
+          "excel",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.5467720264167968,
+        "shared_skills": [
+          "problem_solving",
+          "english",
+          "excel",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "problem_solving",
+          "data_entry",
+          "english",
+          "payroll"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "problem_solving",
+          "data_entry",
+          "english",
+          "payroll"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.8473657595618913,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.8473657595618913,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.6516357330850744,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.6516357330850744,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.translator",
+        "skill_distance": 0.7984686634622495,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.7984686634622495,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.accounting_clerk",
+        "target": "occ.content_writer",
+        "skill_distance": 0.7517252379833663,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.accounting_clerk",
+        "skill_distance": 0.7517252379833663,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.6098830812608473,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.6098830812608473,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.47998738895473314,
+        "shared_skills": [
+          "data_analysis",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.47998738895473314,
+        "shared_skills": [
+          "data_analysis",
+          "english",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.recruiter",
+        "skill_distance": 0.5775877387799606,
+        "shared_skills": [
+          "english",
+          "excel",
+          "problem_solving",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.5775877387799606,
+        "shared_skills": [
+          "english",
+          "excel",
+          "problem_solving",
+          "communication",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "payroll",
+          "data_entry",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "excel",
+          "payroll",
+          "data_entry",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.6565727620237474,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.6565727620237474,
+        "shared_skills": [
+          "excel",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.translator",
+        "skill_distance": 0.8102270464825729,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.8102270464825729,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.bookkeeper",
+        "target": "occ.content_writer",
+        "skill_distance": 0.7762571046399912,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.bookkeeper",
+        "skill_distance": 0.7762571046399912,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "marketing",
+          "seo",
+          "social_media",
+          "copywriting",
+          "content_writing"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "marketing",
+          "seo",
+          "social_media",
+          "copywriting",
+          "content_writing"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.recruiter",
+        "skill_distance": 0.5951725531689029,
+        "shared_skills": [
+          "communication",
+          "english",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.5951725531689029,
+        "shared_skills": [
+          "communication",
+          "english",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.337095145422605,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.337095145422605,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.8498323347676042,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.8498323347676042,
+        "shared_skills": [
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.5419317055216911,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.5419317055216911,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.translator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "content_writing",
+          "copywriting",
+          "communication",
+          "english",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "content_writing",
+          "copywriting",
+          "communication",
+          "english",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.marketing_coordinator",
+        "target": "occ.content_writer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "seo",
+          "content_writing",
+          "copywriting",
+          "social_media",
+          "marketing"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.marketing_coordinator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "seo",
+          "content_writing",
+          "copywriting",
+          "social_media",
+          "marketing"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.recruiter",
+        "skill_distance": 0.7021465510196394,
+        "shared_skills": [
+          "english",
+          "excel",
+          "project_management",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.7021465510196394,
+        "shared_skills": [
+          "english",
+          "excel",
+          "project_management",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.5611814033092303,
+        "shared_skills": [
+          "english",
+          "project_management",
+          "excel",
+          "data_analysis",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.5611814033092303,
+        "shared_skills": [
+          "english",
+          "project_management",
+          "excel",
+          "data_analysis",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.6815253108101055,
+        "shared_skills": [
+          "english",
+          "project_management",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.6815253108101055,
+        "shared_skills": [
+          "english",
+          "project_management",
+          "excel",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.translator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "copywriting",
+          "content_writing",
+          "english",
+          "communication",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "copywriting",
+          "content_writing",
+          "english",
+          "communication",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.digital_marketer",
+        "target": "occ.content_writer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "seo",
+          "copywriting",
+          "social_media",
+          "content_writing",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.digital_marketer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "seo",
+          "copywriting",
+          "social_media",
+          "content_writing",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "recruitment",
+          "hr",
+          "communication",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.recruiter",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "recruitment",
+          "hr",
+          "communication",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.7697365185742514,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.recruiter",
+        "skill_distance": 0.7697365185742514,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.5952216387300132,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "project_management",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.recruiter",
+        "skill_distance": 0.5952216387300132,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "project_management",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.translator",
+        "skill_distance": 0.2932310003381857,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "project_management",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.recruiter",
+        "skill_distance": 0.2932310003381857,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "project_management",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.recruiter",
+        "target": "occ.content_writer",
+        "skill_distance": 0.5363664198879171,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.recruiter",
+        "skill_distance": 0.5363664198879171,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.7706489858178107,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.7706489858178107,
+        "shared_skills": [
+          "communication",
+          "teamwork",
+          "english",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.4140754284072823,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.4140754284072823,
+        "shared_skills": [
+          "excel",
+          "project_management",
+          "english",
+          "communication",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.translator",
+        "skill_distance": 0.42779885313739574,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "project_management",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.42779885313739574,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "project_management",
+          "teamwork"
+        ]
+      },
+      {
+        "source": "occ.hr_generalist",
+        "target": "occ.content_writer",
+        "skill_distance": 0.5735335652272043,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.hr_generalist",
+        "skill_distance": 0.5735335652272043,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "data_analysis",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "warehouse",
+          "inventory",
+          "logistics",
+          "customer_service",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "warehouse",
+          "inventory",
+          "logistics",
+          "customer_service",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.translator",
+        "skill_distance": 0.7336159468343457,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english",
+          "teamwork",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.7336159468343457,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english",
+          "teamwork",
+          "problem_solving"
+        ]
+      },
+      {
+        "source": "occ.warehouse_worker",
+        "target": "occ.content_writer",
+        "skill_distance": 0.8308023144187863,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.warehouse_worker",
+        "skill_distance": 0.8308023144187863,
+        "shared_skills": [
+          "thai",
+          "communication",
+          "english"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.translator",
+        "skill_distance": 0.671217365211854,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.671217365211854,
+        "shared_skills": [
+          "english",
+          "communication",
+          "problem_solving",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.logistics_coordinator",
+        "target": "occ.content_writer",
+        "skill_distance": 0.7159645039734853,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.logistics_coordinator",
+        "skill_distance": 0.7159645039734853,
+        "shared_skills": [
+          "english",
+          "communication",
+          "excel",
+          "project_management"
+        ]
+      },
+      {
+        "source": "occ.translator",
+        "target": "occ.content_writer",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "content_writing",
+          "copywriting",
+          "english",
+          "thai",
+          "communication"
+        ]
+      },
+      {
+        "source": "occ.content_writer",
+        "target": "occ.translator",
+        "skill_distance": 0.0,
+        "shared_skills": [
+          "content_writing",
+          "copywriting",
+          "english",
+          "thai",
+          "communication"
+        ]
+      }
+    ]
+  },
+  "centrality": {
+    "degree": {
+      "occ.logistics_coordinator": 0.9411764705882353,
+      "occ.hr_generalist": 0.9411764705882353,
+      "occ.digital_marketer": 0.8823529411764706,
+      "occ.qa_quality_control": 0.7058823529411765,
+      "occ.warehouse_worker": 0.7058823529411765,
+      "occ.translator": 0.8823529411764706,
+      "occ.bookkeeper": 0.8235294117647058,
+      "occ.data_entry": 0.9411764705882353,
+      "occ.cashier": 0.6470588235294118,
+      "occ.customer_success": 0.9411764705882353,
+      "occ.call_center_agent": 0.8823529411764706,
+      "occ.retail_sales_assistant": 0.8823529411764706,
+      "occ.accounting_clerk": 0.8823529411764706,
+      "occ.marketing_coordinator": 1.0,
+      "occ.recruiter": 0.9411764705882353,
+      "occ.content_writer": 1.0,
+      "occ.factory_technician": 0.23529411764705882,
+      "occ.junior_data_analyst": 0.8235294117647058
+    },
+    "betweenness": {
+      "occ.logistics_coordinator": 0.23139310000623864,
+      "occ.hr_generalist": 0.23139310000623864,
+      "occ.digital_marketer": 0.6288601909039864,
+      "occ.qa_quality_control": 0.3843034499968806,
+      "occ.warehouse_worker": 0.017468338636221846,
+      "occ.translator": 0.12751887204441947,
+      "occ.bookkeeper": 0.052405015908665545,
+      "occ.data_entry": 0.23139310000623864,
+      "occ.cashier": 0.0,
+      "occ.customer_success": 0.23139310000623864,
+      "occ.call_center_agent": 0.12751887204441947,
+      "occ.retail_sales_assistant": 0.12751887204441947,
+      "occ.accounting_clerk": 0.12882899744213608,
+      "occ.marketing_coordinator": 1.0,
+      "occ.recruiter": 0.23139310000623864,
+      "occ.content_writer": 1.0,
+      "occ.factory_technician": 0.0,
+      "occ.junior_data_analyst": 0.052405015908665545
+    }
+  },
+  "wage_data": {
+    "occ.call_center_agent": {
+      "median": 14000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.customer_success": {
+      "median": 22000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.factory_technician": {
+      "median": 18000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.qa_quality_control": {
+      "median": 20000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.cashier": {
+      "median": 12000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.retail_sales_assistant": {
+      "median": 13500.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.data_entry": {
+      "median": 15000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.junior_data_analyst": {
+      "median": 35000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.accounting_clerk": {
+      "median": 18000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.bookkeeper": {
+      "median": 20000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.marketing_coordinator": {
+      "median": 28000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.digital_marketer": {
+      "median": 32000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.recruiter": {
+      "median": 24000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.hr_generalist": {
+      "median": 26000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.warehouse_worker": {
+      "median": 15000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.logistics_coordinator": {
+      "median": 25000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.translator": {
+      "median": 22000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    },
+    "occ.content_writer": {
+      "median": 23000.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "sample_count": 0
+    }
+  },
+  "risk_scores": {
+    "occ.call_center_agent": 0.85,
+    "occ.customer_success": 0.55,
+    "occ.factory_technician": 0.7,
+    "occ.qa_quality_control": 0.5,
+    "occ.cashier": 0.9,
+    "occ.retail_sales_assistant": 0.75,
+    "occ.data_entry": 0.95,
+    "occ.junior_data_analyst": 0.15,
+    "occ.accounting_clerk": 0.7,
+    "occ.bookkeeper": 0.6,
+    "occ.marketing_coordinator": 0.45,
+    "occ.digital_marketer": 0.35,
+    "occ.recruiter": 0.4,
+    "occ.hr_generalist": 0.3,
+    "occ.warehouse_worker": 0.65,
+    "occ.logistics_coordinator": 0.45,
+    "occ.translator": 0.55,
+    "occ.content_writer": 0.5
+  },
+  "recommendations": {
+    "occ.call_center_agent": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17499999999997823,
+        "wage_delta": 21000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.15,
+        "path": [
+          "occ.call_center_agent",
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.call_center_agent",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "communication",
+              "problem_solving",
+              "english",
+              "thai"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.019130434782620054,
+        "wage_delta": 10000.0,
+        "path_cost": 0.16000000000000003,
+        "target_risk": 0.4,
+        "path": [
+          "occ.call_center_agent",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.call_center_agent",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.030217391304366695,
+        "wage_delta": 18000.0,
+        "path_cost": 0.36,
+        "target_risk": 0.35,
+        "path": [
+          "occ.call_center_agent",
+          "occ.translator",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.call_center_agent",
+            "to": "occ.translator",
+            "shared_skills": [
+              "thai",
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork"
+            ]
+          },
+          {
+            "from": "occ.translator",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "copywriting",
+              "content_writing",
+              "english",
+              "communication",
+              "project_management"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.03778177825186921,
+        "wage_delta": 12000.0,
+        "path_cost": 0.2521296043388125,
+        "target_risk": 0.3,
+        "path": [
+          "occ.call_center_agent",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.call_center_agent",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "english",
+              "problem_solving",
+              "teamwork"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.logistics_coordinator",
+        "target_label": "Logistics coordinator",
+        "score": -0.046857130397240127,
+        "wage_delta": 11000.0,
+        "path_cost": 0.19446582604940174,
+        "target_risk": 0.45,
+        "path": [
+          "occ.call_center_agent",
+          "occ.logistics_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.call_center_agent",
+            "to": "occ.logistics_coordinator",
+            "shared_skills": [
+              "customer_service",
+              "english",
+              "communication",
+              "problem_solving"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.customer_success": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.39499999999997826,
+        "wage_delta": 13000.0,
+        "path_cost": 0.06,
+        "target_risk": 0.15,
+        "path": [
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.1297826086956333,
+        "wage_delta": 10000.0,
+        "path_cost": 0.19999999999999998,
+        "target_risk": 0.35,
+        "path": [
+          "occ.customer_success",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": 0.09434782608694328,
+        "wage_delta": 4000.0,
+        "path_cost": 0.12,
+        "target_risk": 0.3,
+        "path": [
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.019130434782620054,
+        "wage_delta": 2000.0,
+        "path_cost": 0.16000000000000003,
+        "target_risk": 0.4,
+        "path": [
+          "occ.customer_success",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.customer_success",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.logistics_coordinator",
+        "target_label": "Logistics coordinator",
+        "score": -0.03239130434783841,
+        "wage_delta": 3000.0,
+        "path_cost": 0.18000000000000002,
+        "target_risk": 0.45,
+        "path": [
+          "occ.customer_success",
+          "occ.logistics_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.customer_success",
+            "to": "occ.logistics_coordinator",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.factory_technician": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": -0.10983856987861625,
+        "wage_delta": 17000.0,
+        "path_cost": 0.5648385698785945,
+        "target_risk": 0.15,
+        "path": [
+          "occ.factory_technician",
+          "occ.qa_quality_control",
+          "occ.digital_marketer",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.factory_technician",
+            "to": "occ.qa_quality_control",
+            "shared_skills": [
+              "manufacturing",
+              "quality_control",
+              "qa_testing",
+              "lean",
+              "six_sigma"
+            ]
+          },
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "social_media",
+              "project_management",
+              "data_analysis",
+              "excel"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.17505596118296113,
+        "wage_delta": 14000.0,
+        "path_cost": 0.5048385698785944,
+        "target_risk": 0.35,
+        "path": [
+          "occ.factory_technician",
+          "occ.qa_quality_control",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.factory_technician",
+            "to": "occ.qa_quality_control",
+            "shared_skills": [
+              "manufacturing",
+              "quality_control",
+              "qa_testing",
+              "lean",
+              "six_sigma"
+            ]
+          },
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "social_media",
+              "project_management",
+              "data_analysis",
+              "excel"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.qa_quality_control",
+        "target_label": "QA / Quality control",
+        "score": -0.1760869565217467,
+        "wage_delta": 2000.0,
+        "path_cost": 0.2,
+        "target_risk": 0.5,
+        "path": [
+          "occ.factory_technician",
+          "occ.qa_quality_control"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.factory_technician",
+            "to": "occ.qa_quality_control",
+            "shared_skills": [
+              "manufacturing",
+              "quality_control",
+              "qa_testing",
+              "lean",
+              "six_sigma"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.32281933505498595,
+        "wage_delta": 10000.0,
+        "path_cost": 0.5356454220114926,
+        "target_risk": 0.45,
+        "path": [
+          "occ.factory_technician",
+          "occ.qa_quality_control",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.factory_technician",
+            "to": "occ.qa_quality_control",
+            "shared_skills": [
+              "manufacturing",
+              "quality_control",
+              "qa_testing",
+              "lean",
+              "six_sigma"
+            ]
+          },
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "social_media",
+              "excel",
+              "project_management"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.5575456512409328,
+        "wage_delta": 8000.0,
+        "path_cost": 0.771893477327876,
+        "target_risk": 0.3,
+        "path": [
+          "occ.factory_technician",
+          "occ.qa_quality_control",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.factory_technician",
+            "to": "occ.qa_quality_control",
+            "shared_skills": [
+              "manufacturing",
+              "quality_control",
+              "qa_testing",
+              "lean",
+              "six_sigma"
+            ]
+          },
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "project_management",
+              "data_analysis",
+              "teamwork"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.qa_quality_control": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.09016143012138376,
+        "wage_delta": 15000.0,
+        "path_cost": 0.3648385698785945,
+        "target_risk": 0.15,
+        "path": [
+          "occ.qa_quality_control",
+          "occ.digital_marketer",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "social_media",
+              "project_management",
+              "data_analysis",
+              "excel"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.024944038817038813,
+        "wage_delta": 12000.0,
+        "path_cost": 0.3048385698785945,
+        "target_risk": 0.35,
+        "path": [
+          "occ.qa_quality_control",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "social_media",
+              "project_management",
+              "data_analysis",
+              "excel"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.12281933505498599,
+        "wage_delta": 8000.0,
+        "path_cost": 0.3356454220114926,
+        "target_risk": 0.45,
+        "path": [
+          "occ.qa_quality_control",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "social_media",
+              "excel",
+              "project_management"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.35754565124093285,
+        "wage_delta": 6000.0,
+        "path_cost": 0.5718934773278761,
+        "target_risk": 0.3,
+        "path": [
+          "occ.qa_quality_control",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "project_management",
+              "data_analysis",
+              "teamwork"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.factory_technician",
+        "target_label": "Factory technician",
+        "score": -0.35956521739131,
+        "wage_delta": -2000.0,
+        "path_cost": 0.27999999999999997,
+        "target_risk": 0.7,
+        "path": [
+          "occ.qa_quality_control",
+          "occ.factory_technician"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.qa_quality_control",
+            "to": "occ.factory_technician",
+            "shared_skills": [
+              "manufacturing",
+              "quality_control",
+              "qa_testing",
+              "lean",
+              "six_sigma"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.cashier": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17499999999997673,
+        "wage_delta": 23000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.15,
+        "path": [
+          "occ.cashier",
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.cashier",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "communication",
+              "thai",
+              "teamwork",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.09476744186048515,
+        "wage_delta": 20000.0,
+        "path_cost": 0.42000000000000004,
+        "target_risk": 0.35,
+        "path": [
+          "occ.cashier",
+          "occ.customer_success",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.cashier",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "communication",
+              "thai",
+              "teamwork",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.logistics_coordinator",
+        "target_label": "Logistics coordinator",
+        "score": -0.1130744108453835,
+        "wage_delta": 13000.0,
+        "path_cost": 0.2455162713104873,
+        "target_risk": 0.45,
+        "path": [
+          "occ.cashier",
+          "occ.logistics_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.cashier",
+            "to": "occ.logistics_coordinator",
+            "shared_skills": [
+              "customer_service",
+              "communication",
+              "english"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.1393023255814089,
+        "wage_delta": 14000.0,
+        "path_cost": 0.34,
+        "target_risk": 0.3,
+        "path": [
+          "occ.cashier",
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.cashier",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "communication",
+              "thai",
+              "teamwork",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.18732558139535807,
+        "wage_delta": 10000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.cashier",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.cashier",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "communication",
+              "thai",
+              "teamwork",
+              "english"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.retail_sales_assistant": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17499999999997823,
+        "wage_delta": 21500.0,
+        "path_cost": 0.28,
+        "target_risk": 0.15,
+        "path": [
+          "occ.retail_sales_assistant",
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.retail_sales_assistant",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "sales",
+              "communication",
+              "english",
+              "thai"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.logistics_coordinator",
+        "target_label": "Logistics coordinator",
+        "score": -0.03239130434783841,
+        "wage_delta": 11500.0,
+        "path_cost": 0.18000000000000002,
+        "target_risk": 0.45,
+        "path": [
+          "occ.retail_sales_assistant",
+          "occ.logistics_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.retail_sales_assistant",
+            "to": "occ.logistics_coordinator",
+            "shared_skills": [
+              "customer_service",
+              "english",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.09021739130436675,
+        "wage_delta": 18500.0,
+        "path_cost": 0.42000000000000004,
+        "target_risk": 0.35,
+        "path": [
+          "occ.retail_sales_assistant",
+          "occ.customer_success",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.retail_sales_assistant",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "sales",
+              "communication",
+              "english",
+              "thai"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.12565217391305675,
+        "wage_delta": 12500.0,
+        "path_cost": 0.34,
+        "target_risk": 0.3,
+        "path": [
+          "occ.retail_sales_assistant",
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.retail_sales_assistant",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "sales",
+              "communication",
+              "english",
+              "thai"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.1676086956521834,
+        "wage_delta": 8500.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.retail_sales_assistant",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.retail_sales_assistant",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "sales",
+              "communication",
+              "english",
+              "thai"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.data_entry": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.39499999999997826,
+        "wage_delta": 20000.0,
+        "path_cost": 0.06,
+        "target_risk": 0.15,
+        "path": [
+          "occ.data_entry",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.data_entry",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "sql",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.1340915327895219,
+        "wage_delta": 17000.0,
+        "path_cost": 0.19569107590611137,
+        "target_risk": 0.35,
+        "path": [
+          "occ.data_entry",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.data_entry",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": 0.09434782608694328,
+        "wage_delta": 11000.0,
+        "path_cost": 0.12,
+        "target_risk": 0.3,
+        "path": [
+          "occ.data_entry",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.data_entry",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "communication",
+              "english",
+              "problem_solving",
+              "data_entry"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.13913043478262005,
+        "wage_delta": 9000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.4,
+        "path": [
+          "occ.data_entry",
+          "occ.hr_generalist",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.data_entry",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "communication",
+              "english",
+              "problem_solving",
+              "data_entry"
+            ]
+          },
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "recruitment",
+              "hr",
+              "communication",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.16286498894960477,
+        "wage_delta": 13000.0,
+        "path_cost": 0.3756910759061114,
+        "target_risk": 0.45,
+        "path": [
+          "occ.data_entry",
+          "occ.digital_marketer",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.data_entry",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "english",
+              "excel",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.junior_data_analyst": [
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.254999999999975,
+        "wage_delta": -3000.0,
+        "path_cost": 0.13999999999999999,
+        "target_risk": 0.35,
+        "path": [
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.05500000000002003,
+        "wage_delta": -7000.0,
+        "path_cost": 0.32,
+        "target_risk": 0.45,
+        "path": [
+          "occ.junior_data_analyst",
+          "occ.digital_marketer",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.07528016074253449,
+        "wage_delta": -9000.0,
+        "path_cost": 0.335280160742517,
+        "target_risk": 0.3,
+        "path": [
+          "occ.junior_data_analyst",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "english",
+              "problem_solving",
+              "communication",
+              "data_analysis"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.13500000000001255,
+        "wage_delta": -13000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.junior_data_analyst",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.20000000000001505,
+        "wage_delta": -11000.0,
+        "path_cost": 0.38000000000000006,
+        "target_risk": 0.4,
+        "path": [
+          "occ.junior_data_analyst",
+          "occ.customer_success",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.accounting_clerk": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.39499999999997826,
+        "wage_delta": 17000.0,
+        "path_cost": 0.06,
+        "target_risk": 0.15,
+        "path": [
+          "occ.accounting_clerk",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.accounting_clerk",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "problem_solving",
+              "english",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.1297826086956333,
+        "wage_delta": 14000.0,
+        "path_cost": 0.19999999999999998,
+        "target_risk": 0.35,
+        "path": [
+          "occ.accounting_clerk",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.accounting_clerk",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "problem_solving",
+              "english",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": 0.09434782608694328,
+        "wage_delta": 8000.0,
+        "path_cost": 0.12,
+        "target_risk": 0.3,
+        "path": [
+          "occ.accounting_clerk",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.accounting_clerk",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "problem_solving",
+              "data_entry",
+              "english",
+              "payroll"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.13913043478262005,
+        "wage_delta": 6000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.4,
+        "path": [
+          "occ.accounting_clerk",
+          "occ.hr_generalist",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.accounting_clerk",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "problem_solving",
+              "data_entry",
+              "english",
+              "payroll"
+            ]
+          },
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "recruitment",
+              "hr",
+              "communication",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.16717391304349338,
+        "wage_delta": 10000.0,
+        "path_cost": 0.38,
+        "target_risk": 0.45,
+        "path": [
+          "occ.accounting_clerk",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.accounting_clerk",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "problem_solving",
+              "english",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.bookkeeper": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.39499999999997826,
+        "wage_delta": 15000.0,
+        "path_cost": 0.06,
+        "target_risk": 0.15,
+        "path": [
+          "occ.bookkeeper",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.bookkeeper",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "english",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.1297826086956333,
+        "wage_delta": 12000.0,
+        "path_cost": 0.19999999999999998,
+        "target_risk": 0.35,
+        "path": [
+          "occ.bookkeeper",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.bookkeeper",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "english",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": 0.09434782608694328,
+        "wage_delta": 6000.0,
+        "path_cost": 0.12,
+        "target_risk": 0.3,
+        "path": [
+          "occ.bookkeeper",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.bookkeeper",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "payroll",
+              "data_entry",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.13913043478262005,
+        "wage_delta": 4000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.4,
+        "path": [
+          "occ.bookkeeper",
+          "occ.hr_generalist",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.bookkeeper",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "payroll",
+              "data_entry",
+              "english",
+              "problem_solving"
+            ]
+          },
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "recruitment",
+              "hr",
+              "communication",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.16717391304349338,
+        "wage_delta": 8000.0,
+        "path_cost": 0.38,
+        "target_risk": 0.45,
+        "path": [
+          "occ.bookkeeper",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.bookkeeper",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "data_analysis",
+              "english",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.marketing_coordinator": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.2549999999999783,
+        "wage_delta": 7000.0,
+        "path_cost": 0.19999999999999998,
+        "target_risk": 0.15,
+        "path": [
+          "occ.marketing_coordinator",
+          "occ.digital_marketer",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.marketing_coordinator",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.18978260869563335,
+        "wage_delta": 4000.0,
+        "path_cost": 0.13999999999999999,
+        "target_risk": 0.35,
+        "path": [
+          "occ.marketing_coordinator",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.marketing_coordinator",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.content_writer",
+        "target_label": "Content writer",
+        "score": -0.11086956521740171,
+        "wage_delta": -5000.0,
+        "path_cost": 0.2,
+        "target_risk": 0.5,
+        "path": [
+          "occ.marketing_coordinator",
+          "occ.content_writer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.marketing_coordinator",
+            "to": "occ.content_writer",
+            "shared_skills": [
+              "seo",
+              "content_writing",
+              "copywriting",
+              "social_media",
+              "marketing"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.1436486336157531,
+        "wage_delta": -2000.0,
+        "path_cost": 0.3579964597026964,
+        "target_risk": 0.3,
+        "path": [
+          "occ.marketing_coordinator",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.marketing_coordinator",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "project_management",
+              "communication",
+              "english"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.translator",
+        "target_label": "Translator",
+        "score": -0.1676086956521834,
+        "wage_delta": -6000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.marketing_coordinator",
+          "occ.translator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.marketing_coordinator",
+            "to": "occ.translator",
+            "shared_skills": [
+              "content_writing",
+              "copywriting",
+              "communication",
+              "english",
+              "project_management"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.digital_marketer": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.39499999999997826,
+        "wage_delta": 3000.0,
+        "path_cost": 0.06,
+        "target_risk": 0.15,
+        "path": [
+          "occ.digital_marketer",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": 0.0328260869565066,
+        "wage_delta": -4000.0,
+        "path_cost": 0.18000000000000002,
+        "target_risk": 0.45,
+        "path": [
+          "occ.digital_marketer",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "marketing",
+              "seo",
+              "social_media",
+              "copywriting",
+              "content_writing"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.content_writer",
+        "target_label": "Content writer",
+        "score": -0.11086956521740171,
+        "wage_delta": -9000.0,
+        "path_cost": 0.2,
+        "target_risk": 0.5,
+        "path": [
+          "occ.digital_marketer",
+          "occ.content_writer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.content_writer",
+            "shared_skills": [
+              "seo",
+              "copywriting",
+              "social_media",
+              "content_writing",
+              "english"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.translator",
+        "target_label": "Translator",
+        "score": -0.1676086956521834,
+        "wage_delta": -10000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.digital_marketer",
+          "occ.translator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.translator",
+            "shared_skills": [
+              "copywriting",
+              "content_writing",
+              "english",
+              "communication",
+              "project_management"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.1809323346555737,
+        "wage_delta": -6000.0,
+        "path_cost": 0.395280160742517,
+        "target_risk": 0.3,
+        "path": [
+          "occ.digital_marketer",
+          "occ.junior_data_analyst",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "excel",
+              "english",
+              "problem_solving",
+              "communication",
+              "data_analysis"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.recruiter": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17499999999997823,
+        "wage_delta": 11000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.15,
+        "path": [
+          "occ.recruiter",
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.recruiter",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": 0.09434782608694328,
+        "wage_delta": 2000.0,
+        "path_cost": 0.12,
+        "target_risk": 0.3,
+        "path": [
+          "occ.recruiter",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.recruiter",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "recruitment",
+              "hr",
+              "communication",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.09021739130436675,
+        "wage_delta": 8000.0,
+        "path_cost": 0.42000000000000004,
+        "target_risk": 0.35,
+        "path": [
+          "occ.recruiter",
+          "occ.customer_success",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.recruiter",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.1676086956521834,
+        "wage_delta": -2000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.recruiter",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.recruiter",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.logistics_coordinator",
+        "target_label": "Logistics coordinator",
+        "score": -0.2523913043478384,
+        "wage_delta": 1000.0,
+        "path_cost": 0.4,
+        "target_risk": 0.45,
+        "path": [
+          "occ.recruiter",
+          "occ.customer_success",
+          "occ.logistics_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.recruiter",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.logistics_coordinator",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.hr_generalist": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17971983925746127,
+        "wage_delta": 9000.0,
+        "path_cost": 0.275280160742517,
+        "target_risk": 0.15,
+        "path": [
+          "occ.hr_generalist",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "problem_solving",
+              "communication",
+              "data_analysis"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.019130434782620054,
+        "wage_delta": -2000.0,
+        "path_cost": 0.16000000000000003,
+        "target_risk": 0.4,
+        "path": [
+          "occ.hr_generalist",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "recruitment",
+              "hr",
+              "communication",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.08549755204688365,
+        "wage_delta": 6000.0,
+        "path_cost": 0.41528016074251695,
+        "target_risk": 0.35,
+        "path": [
+          "occ.hr_generalist",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "problem_solving",
+              "communication",
+              "data_analysis"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.1676086956521834,
+        "wage_delta": -4000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.hr_generalist",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": -0.20517037274618977,
+        "wage_delta": 2000.0,
+        "path_cost": 0.4179964597026964,
+        "target_risk": 0.45,
+        "path": [
+          "occ.hr_generalist",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.hr_generalist",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "excel",
+              "project_management",
+              "communication",
+              "english"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.warehouse_worker": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17499999999997823,
+        "wage_delta": 20000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.15,
+        "path": [
+          "occ.warehouse_worker",
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.warehouse_worker",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "thai",
+              "communication",
+              "teamwork",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.logistics_coordinator",
+        "target_label": "Logistics coordinator",
+        "score": -0.03239130434783841,
+        "wage_delta": 10000.0,
+        "path_cost": 0.18000000000000002,
+        "target_risk": 0.45,
+        "path": [
+          "occ.warehouse_worker",
+          "occ.logistics_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.warehouse_worker",
+            "to": "occ.logistics_coordinator",
+            "shared_skills": [
+              "warehouse",
+              "inventory",
+              "logistics",
+              "customer_service",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.09021739130436675,
+        "wage_delta": 17000.0,
+        "path_cost": 0.42000000000000004,
+        "target_risk": 0.35,
+        "path": [
+          "occ.warehouse_worker",
+          "occ.customer_success",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.warehouse_worker",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "thai",
+              "communication",
+              "teamwork",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.12565217391305675,
+        "wage_delta": 11000.0,
+        "path_cost": 0.34,
+        "target_risk": 0.3,
+        "path": [
+          "occ.warehouse_worker",
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.warehouse_worker",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "thai",
+              "communication",
+              "teamwork",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.1676086956521834,
+        "wage_delta": 7000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.warehouse_worker",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.warehouse_worker",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "thai",
+              "communication",
+              "teamwork",
+              "english"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.logistics_coordinator": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.17499999999997823,
+        "wage_delta": 10000.0,
+        "path_cost": 0.28,
+        "target_risk": 0.15,
+        "path": [
+          "occ.logistics_coordinator",
+          "occ.customer_success",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.logistics_coordinator",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": -0.09021739130436675,
+        "wage_delta": 7000.0,
+        "path_cost": 0.42000000000000004,
+        "target_risk": 0.35,
+        "path": [
+          "occ.logistics_coordinator",
+          "occ.customer_success",
+          "occ.junior_data_analyst",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.logistics_coordinator",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "excel",
+              "english",
+              "data_analysis",
+              "problem_solving",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.junior_data_analyst",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.12565217391305675,
+        "wage_delta": 1000.0,
+        "path_cost": 0.34,
+        "target_risk": 0.3,
+        "path": [
+          "occ.logistics_coordinator",
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.logistics_coordinator",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.customer_success",
+        "target_label": "Customer success specialist",
+        "score": -0.1676086956521834,
+        "wage_delta": -3000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.logistics_coordinator",
+          "occ.customer_success"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.logistics_coordinator",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.recruiter",
+        "target_label": "Recruiter",
+        "score": -0.23913043478262008,
+        "wage_delta": -1000.0,
+        "path_cost": 0.38000000000000006,
+        "target_risk": 0.4,
+        "path": [
+          "occ.logistics_coordinator",
+          "occ.customer_success",
+          "occ.recruiter"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.logistics_coordinator",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "customer_service",
+              "excel",
+              "project_management",
+              "english",
+              "communication"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.recruiter",
+            "shared_skills": [
+              "english",
+              "communication",
+              "problem_solving",
+              "teamwork",
+              "excel"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.translator": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.2549999999999783,
+        "wage_delta": 13000.0,
+        "path_cost": 0.19999999999999998,
+        "target_risk": 0.15,
+        "path": [
+          "occ.translator",
+          "occ.digital_marketer",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.translator",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "copywriting",
+              "content_writing",
+              "english",
+              "communication",
+              "project_management"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.18978260869563335,
+        "wage_delta": 10000.0,
+        "path_cost": 0.13999999999999999,
+        "target_risk": 0.35,
+        "path": [
+          "occ.translator",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.translator",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "copywriting",
+              "content_writing",
+              "english",
+              "communication",
+              "project_management"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": 0.0328260869565066,
+        "wage_delta": 6000.0,
+        "path_cost": 0.18000000000000002,
+        "target_risk": 0.45,
+        "path": [
+          "occ.translator",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.translator",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "content_writing",
+              "copywriting",
+              "communication",
+              "english",
+              "project_management"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.content_writer",
+        "target_label": "Content writer",
+        "score": -0.11086956521740171,
+        "wage_delta": 1000.0,
+        "path_cost": 0.2,
+        "target_risk": 0.5,
+        "path": [
+          "occ.translator",
+          "occ.content_writer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.translator",
+            "to": "occ.content_writer",
+            "shared_skills": [
+              "content_writing",
+              "copywriting",
+              "english",
+              "thai",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.12565217391305675,
+        "wage_delta": 4000.0,
+        "path_cost": 0.34,
+        "target_risk": 0.3,
+        "path": [
+          "occ.translator",
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.translator",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "english",
+              "thai",
+              "communication",
+              "problem_solving",
+              "project_management"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      }
+    ],
+    "occ.content_writer": [
+      {
+        "target": "occ.junior_data_analyst",
+        "target_label": "Junior data analyst",
+        "score": 0.2549999999999783,
+        "wage_delta": 12000.0,
+        "path_cost": 0.19999999999999998,
+        "target_risk": 0.15,
+        "path": [
+          "occ.content_writer",
+          "occ.digital_marketer",
+          "occ.junior_data_analyst"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.content_writer",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "seo",
+              "copywriting",
+              "social_media",
+              "content_writing",
+              "english"
+            ]
+          },
+          {
+            "from": "occ.digital_marketer",
+            "to": "occ.junior_data_analyst",
+            "shared_skills": [
+              "data_analysis",
+              "data_visualization",
+              "english",
+              "excel",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.digital_marketer",
+        "target_label": "Digital marketer",
+        "score": 0.18978260869563335,
+        "wage_delta": 9000.0,
+        "path_cost": 0.13999999999999999,
+        "target_risk": 0.35,
+        "path": [
+          "occ.content_writer",
+          "occ.digital_marketer"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.content_writer",
+            "to": "occ.digital_marketer",
+            "shared_skills": [
+              "seo",
+              "copywriting",
+              "social_media",
+              "content_writing",
+              "english"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.marketing_coordinator",
+        "target_label": "Marketing coordinator",
+        "score": 0.0328260869565066,
+        "wage_delta": 5000.0,
+        "path_cost": 0.18000000000000002,
+        "target_risk": 0.45,
+        "path": [
+          "occ.content_writer",
+          "occ.marketing_coordinator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.content_writer",
+            "to": "occ.marketing_coordinator",
+            "shared_skills": [
+              "seo",
+              "content_writing",
+              "copywriting",
+              "social_media",
+              "marketing"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.translator",
+        "target_label": "Translator",
+        "score": -0.1676086956521834,
+        "wage_delta": -1000.0,
+        "path_cost": 0.22000000000000003,
+        "target_risk": 0.55,
+        "path": [
+          "occ.content_writer",
+          "occ.translator"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.content_writer",
+            "to": "occ.translator",
+            "shared_skills": [
+              "content_writing",
+              "copywriting",
+              "english",
+              "thai",
+              "communication"
+            ]
+          }
+        ]
+      },
+      {
+        "target": "occ.hr_generalist",
+        "target_label": "HR generalist",
+        "score": -0.3024607346371161,
+        "wage_delta": 3000.0,
+        "path_cost": 0.5168085607240593,
+        "target_risk": 0.3,
+        "path": [
+          "occ.content_writer",
+          "occ.customer_success",
+          "occ.hr_generalist"
+        ],
+        "path_explanation": [
+          {
+            "from": "occ.content_writer",
+            "to": "occ.customer_success",
+            "shared_skills": [
+              "english",
+              "thai",
+              "communication",
+              "excel",
+              "data_analysis"
+            ]
+          },
+          {
+            "from": "occ.customer_success",
+            "to": "occ.hr_generalist",
+            "shared_skills": [
+              "communication",
+              "excel",
+              "project_management",
+              "english",
+              "problem_solving"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

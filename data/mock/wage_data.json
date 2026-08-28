@@ -1,0 +1,20 @@
+{
+  "occ.call_center_agent": 14000,
+  "occ.customer_success": 22000,
+  "occ.factory_technician": 18000,
+  "occ.qa_quality_control": 20000,
+  "occ.cashier": 12000,
+  "occ.retail_sales_assistant": 13500,
+  "occ.data_entry": 15000,
+  "occ.junior_data_analyst": 35000,
+  "occ.accounting_clerk": 18000,
+  "occ.bookkeeper": 20000,
+  "occ.marketing_coordinator": 28000,
+  "occ.digital_marketer": 32000,
+  "occ.recruiter": 24000,
+  "occ.hr_generalist": 26000,
+  "occ.warehouse_worker": 15000,
+  "occ.logistics_coordinator": 25000,
+  "occ.translator": 22000,
+  "occ.content_writer": 23000
+}

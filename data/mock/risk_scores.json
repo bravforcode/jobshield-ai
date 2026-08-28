@@ -1,0 +1,20 @@
+{
+  "occ.call_center_agent": 0.85,
+  "occ.customer_success": 0.55,
+  "occ.factory_technician": 0.7,
+  "occ.qa_quality_control": 0.5,
+  "occ.cashier": 0.9,
+  "occ.retail_sales_assistant": 0.75,
+  "occ.data_entry": 0.95,
+  "occ.junior_data_analyst": 0.15,
+  "occ.accounting_clerk": 0.7,
+  "occ.bookkeeper": 0.6,
+  "occ.marketing_coordinator": 0.45,
+  "occ.digital_marketer": 0.35,
+  "occ.recruiter": 0.4,
+  "occ.hr_generalist": 0.3,
+  "occ.warehouse_worker": 0.65,
+  "occ.logistics_coordinator": 0.45,
+  "occ.translator": 0.55,
+  "occ.content_writer": 0.5
+}
