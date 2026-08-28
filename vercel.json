@@ -1,16 +1,14 @@
 {
-  "buildCommand": "bun run build:web",
-  "outputDirectory": "ts/web/dist",
-  "installCommand": "bun install",
-  "framework": null,
-  "functions": {
-    "api/index.ts": {
-      "includeFiles": "data/artifacts.json, ts/web/dist/**, ts/web/index.html, ts/web/src/**"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "bun run build",
+  "regions": ["sin1"],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=60, s-maxage=300" }
+      ]
     }
-  },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/web/(.*)", "destination": "/api/index" },
-    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
