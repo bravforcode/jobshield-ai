@@ -50,23 +50,26 @@ jobs:
       - name: Install JS deps
         run: bun install --frozen-lockfile
 
-      - name: TypeScript tests
-        run: bun test
+      - name: Typecheck
+        run: bun run typecheck
 
-      - name: TypeScript lint (biome)
+      - name: Lint (biome)
         run: bun run lint
 
-      - name: Smoke — start API and hit health
+      - name: Build (Next.js)
+        run: bun run build
+
+      - name: Smoke — start Next.js and hit health
         env:
-          JOBSHIELD_ARTIFACTS: data/artifacts.json
           PORT: "3000"
         run: |
-          bun run ts/api/src/index.ts &
+          bun run start &
           pid=$!
-          for i in 1 2 3 4 5; do
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             if curl -sf http://localhost:3000/api/health >/dev/null; then break; fi
             sleep 1
           done
-          curl -sf http://localhost:3000/api/health | grep -q '"ok":true'
+          curl -sf http://localhost:3000/api/health | grep -q '"status":"ok"'
           curl -sf "http://localhost:3000/api/recommend?source=occ.data_entry&topN=2" | grep -q "junior_data_analyst"
+          curl -sf http://localhost:3000/api/stats | grep -q '"occupations":18'
           kill $pid

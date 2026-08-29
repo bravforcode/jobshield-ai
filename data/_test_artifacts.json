@@ -51,8 +51,8 @@
     "freq": {
       "communication": 54,
       "customer_service": 23,
-      "english": 43,
       "thai": 19,
+      "english": 43,
       "teamwork": 21,
       "problem_solving": 21,
       "telemarketing": 1,
@@ -60,39 +60,39 @@
       "excel": 53,
       "sales": 11,
       "data_analysis": 17,
-      "electrical": 5,
+      "manufacturing": 16,
       "cnc": 5,
       "plc": 4,
-      "manufacturing": 16,
+      "electrical": 5,
       "qa_testing": 11,
-      "mechanical": 3,
       "lean": 8,
+      "mechanical": 3,
+      "six_sigma": 6,
       "quality_control": 12,
       "autocad": 2,
-      "six_sigma": 6,
-      "cashier": 10,
       "pos_system": 11,
+      "cashier": 10,
       "data_entry": 18,
-      "bookkeeping": 17,
       "accounting": 17,
+      "bookkeeping": 17,
       "sql": 9,
-      "data_visualization": 9,
       "python": 8,
+      "data_visualization": 9,
       "machine_learning": 1,
       "tax": 12,
       "payroll": 14,
       "quickbooks": 4,
-      "marketing": 18,
-      "social_media": 22,
       "seo": 25,
       "content_writing": 22,
+      "marketing": 18,
+      "social_media": 22,
       "copywriting": 21,
+      "hr": 18,
       "recruitment": 18,
       "interviewing": 9,
-      "hr": 18,
-      "warehouse": 16,
-      "inventory": 16,
       "forklift": 8,
+      "inventory": 16,
+      "warehouse": 16,
       "logistics": 15,
       "translation": 9
     },
@@ -1184,7 +1184,7 @@
       {
         "source": "occ.call_center_agent",
         "target": "occ.marketing_coordinator",
-        "skill_distance": 0.6924721133553202,
+        "skill_distance": 0.6924721133553203,
         "shared_skills": [
           "communication",
           "english"
@@ -1193,7 +1193,7 @@
       {
         "source": "occ.marketing_coordinator",
         "target": "occ.call_center_agent",
-        "skill_distance": 0.6924721133553202,
+        "skill_distance": 0.6924721133553203,
         "shared_skills": [
           "communication",
           "english"
@@ -1470,7 +1470,7 @@
       {
         "source": "occ.customer_success",
         "target": "occ.accounting_clerk",
-        "skill_distance": 0.14151200160018929,
+        "skill_distance": 0.14151200160018917,
         "shared_skills": [
           "excel",
           "problem_solving",
@@ -1482,7 +1482,7 @@
       {
         "source": "occ.accounting_clerk",
         "target": "occ.customer_success",
-        "skill_distance": 0.14151200160018929,
+        "skill_distance": 0.14151200160018917,
         "shared_skills": [
           "excel",
           "problem_solving",
@@ -1518,7 +1518,7 @@
       {
         "source": "occ.customer_success",
         "target": "occ.marketing_coordinator",
-        "skill_distance": 0.2737307979755279,
+        "skill_distance": 0.273730797975528,
         "shared_skills": [
           "project_management",
           "excel",
@@ -1529,7 +1529,7 @@
       {
         "source": "occ.marketing_coordinator",
         "target": "occ.customer_success",
-        "skill_distance": 0.2737307979755279,
+        "skill_distance": 0.273730797975528,
         "shared_skills": [
           "project_management",
           "excel",
@@ -1684,7 +1684,7 @@
       {
         "source": "occ.customer_success",
         "target": "occ.content_writer",
-        "skill_distance": 0.23548062761140676,
+        "skill_distance": 0.23548062761140687,
         "shared_skills": [
           "english",
           "thai",
@@ -1696,7 +1696,7 @@
       {
         "source": "occ.content_writer",
         "target": "occ.customer_success",
-        "skill_distance": 0.23548062761140676,
+        "skill_distance": 0.23548062761140687,
         "shared_skills": [
           "english",
           "thai",
@@ -1926,7 +1926,7 @@
       {
         "source": "occ.cashier",
         "target": "occ.data_entry",
-        "skill_distance": 0.6705952760567174,
+        "skill_distance": 0.6705952760567173,
         "shared_skills": [
           "communication",
           "thai",
@@ -1937,7 +1937,7 @@
       {
         "source": "occ.data_entry",
         "target": "occ.cashier",
-        "skill_distance": 0.6705952760567174,
+        "skill_distance": 0.6705952760567173,
         "shared_skills": [
           "communication",
           "thai",
@@ -2028,7 +2028,7 @@
       {
         "source": "occ.cashier",
         "target": "occ.translator",
-        "skill_distance": 0.6635379207351262,
+        "skill_distance": 0.6635379207351263,
         "shared_skills": [
           "communication",
           "thai",
@@ -2039,7 +2039,7 @@
       {
         "source": "occ.translator",
         "target": "occ.cashier",
-        "skill_distance": 0.6635379207351262,
+        "skill_distance": 0.6635379207351263,
         "shared_skills": [
           "communication",
           "thai",
@@ -2186,7 +2186,7 @@
       {
         "source": "occ.retail_sales_assistant",
         "target": "occ.hr_generalist",
-        "skill_distance": 0.4275968802933544,
+        "skill_distance": 0.4275968802933545,
         "shared_skills": [
           "communication",
           "english",
@@ -2196,7 +2196,7 @@
       {
         "source": "occ.hr_generalist",
         "target": "occ.retail_sales_assistant",
-        "skill_distance": 0.4275968802933544,
+        "skill_distance": 0.4275968802933545,
         "shared_skills": [
           "communication",
           "english",
@@ -2402,7 +2402,7 @@
       {
         "source": "occ.data_entry",
         "target": "occ.recruiter",
-        "skill_distance": 0.22142602134003786,
+        "skill_distance": 0.22142602134003797,
         "shared_skills": [
           "communication",
           "english",
@@ -2414,7 +2414,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.data_entry",
-        "skill_distance": 0.22142602134003786,
+        "skill_distance": 0.22142602134003797,
         "shared_skills": [
           "communication",
           "english",
@@ -2956,7 +2956,7 @@
       {
         "source": "occ.bookkeeper",
         "target": "occ.recruiter",
-        "skill_distance": 0.5945984942450564,
+        "skill_distance": 0.5945984942450565,
         "shared_skills": [
           "excel",
           "english",
@@ -2968,7 +2968,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.bookkeeper",
-        "skill_distance": 0.5945984942450564,
+        "skill_distance": 0.5945984942450565,
         "shared_skills": [
           "excel",
           "english",
@@ -3004,7 +3004,7 @@
       {
         "source": "occ.bookkeeper",
         "target": "occ.logistics_coordinator",
-        "skill_distance": 0.6997489182125872,
+        "skill_distance": 0.6997489182125871,
         "shared_skills": [
           "excel",
           "english",
@@ -3015,7 +3015,7 @@
       {
         "source": "occ.logistics_coordinator",
         "target": "occ.bookkeeper",
-        "skill_distance": 0.6997489182125872,
+        "skill_distance": 0.6997489182125871,
         "shared_skills": [
           "excel",
           "english",
@@ -3390,7 +3390,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.translator",
-        "skill_distance": 0.28570886352700153,
+        "skill_distance": 0.2857088635270013,
         "shared_skills": [
           "english",
           "communication",
@@ -3402,7 +3402,7 @@
       {
         "source": "occ.translator",
         "target": "occ.recruiter",
-        "skill_distance": 0.28570886352700153,
+        "skill_distance": 0.2857088635270013,
         "shared_skills": [
           "english",
           "communication",
@@ -3414,7 +3414,7 @@
       {
         "source": "occ.recruiter",
         "target": "occ.content_writer",
-        "skill_distance": 0.5410332127580069,
+        "skill_distance": 0.541033212758007,
         "shared_skills": [
           "english",
           "communication",
@@ -3425,7 +3425,7 @@
       {
         "source": "occ.content_writer",
         "target": "occ.recruiter",
-        "skill_distance": 0.5410332127580069,
+        "skill_distance": 0.541033212758007,
         "shared_skills": [
           "english",
           "communication",
@@ -3482,7 +3482,7 @@
       {
         "source": "occ.hr_generalist",
         "target": "occ.translator",
-        "skill_distance": 0.4245640805065455,
+        "skill_distance": 0.42456408050654537,
         "shared_skills": [
           "english",
           "communication",
@@ -3494,7 +3494,7 @@
       {
         "source": "occ.translator",
         "target": "occ.hr_generalist",
-        "skill_distance": 0.4245640805065455,
+        "skill_distance": 0.42456408050654537,
         "shared_skills": [
           "english",
           "communication",
@@ -3506,7 +3506,7 @@
       {
         "source": "occ.hr_generalist",
         "target": "occ.content_writer",
-        "skill_distance": 0.6112517792876755,
+        "skill_distance": 0.6112517792876754,
         "shared_skills": [
           "english",
           "communication",
@@ -3517,7 +3517,7 @@
       {
         "source": "occ.content_writer",
         "target": "occ.hr_generalist",
-        "skill_distance": 0.6112517792876755,
+        "skill_distance": 0.6112517792876754,
         "shared_skills": [
           "english",
           "communication",
@@ -3645,44 +3645,44 @@
   },
   "centrality": {
     "degree": {
-      "occ.logistics_coordinator": 0.9375,
-      "occ.bookkeeper": 0.8125,
+      "occ.qa_quality_control": 0.6875,
+      "occ.hr_generalist": 1.0,
       "occ.recruiter": 1.0,
-      "occ.translator": 0.9375,
+      "occ.junior_data_analyst": 0.875,
       "occ.marketing_coordinator": 0.9375,
-      "occ.content_writer": 0.875,
-      "occ.retail_sales_assistant": 0.875,
+      "occ.accounting_clerk": 0.875,
+      "occ.translator": 0.9375,
+      "occ.warehouse_worker": 0.5625,
       "occ.digital_marketer": 0.875,
       "occ.factory_technician": 0.0625,
-      "occ.call_center_agent": 0.9375,
-      "occ.cashier": 0.625,
-      "occ.qa_quality_control": 0.6875,
-      "occ.accounting_clerk": 0.875,
-      "occ.customer_success": 1.0,
-      "occ.junior_data_analyst": 0.875,
-      "occ.hr_generalist": 1.0,
       "occ.data_entry": 1.0,
-      "occ.warehouse_worker": 0.5625
+      "occ.logistics_coordinator": 0.9375,
+      "occ.bookkeeper": 0.8125,
+      "occ.customer_success": 1.0,
+      "occ.cashier": 0.625,
+      "occ.content_writer": 0.875,
+      "occ.retail_sales_assistant": 0.875,
+      "occ.call_center_agent": 0.9375
     },
     "betweenness": {
-      "occ.logistics_coordinator": 0.12785218253968256,
-      "occ.bookkeeper": 0.037500000000000006,
-      "occ.recruiter": 0.18774801587301584,
-      "occ.translator": 0.08635912698412698,
+      "occ.qa_quality_control": 1.0,
+      "occ.hr_generalist": 0.18774801587301587,
+      "occ.recruiter": 0.18774801587301587,
+      "occ.junior_data_analyst": 0.056597222222222215,
       "occ.marketing_coordinator": 0.11649305555555557,
-      "occ.content_writer": 0.04010416666666667,
-      "occ.retail_sales_assistant": 0.06440972222222223,
+      "occ.accounting_clerk": 0.056597222222222215,
+      "occ.translator": 0.08635912698412698,
+      "occ.warehouse_worker": 0.00625,
       "occ.digital_marketer": 0.056597222222222215,
       "occ.factory_technician": 0.0,
-      "occ.call_center_agent": 0.08635912698412698,
+      "occ.data_entry": 0.18774801587301587,
+      "occ.logistics_coordinator": 0.12785218253968253,
+      "occ.bookkeeper": 0.0375,
+      "occ.customer_success": 0.18774801587301587,
       "occ.cashier": 0.013888888888888888,
-      "occ.qa_quality_control": 1.0,
-      "occ.accounting_clerk": 0.056597222222222215,
-      "occ.customer_success": 0.18774801587301584,
-      "occ.junior_data_analyst": 0.056597222222222215,
-      "occ.hr_generalist": 0.18774801587301584,
-      "occ.data_entry": 0.18774801587301584,
-      "occ.warehouse_worker": 0.00625
+      "occ.content_writer": 0.04010416666666666,
+      "occ.retail_sales_assistant": 0.06440972222222222,
+      "occ.call_center_agent": 0.08635912698412698
     }
   },
   "wage_data": {
@@ -4081,9 +4081,9 @@
       {
         "target": "occ.marketing_coordinator",
         "target_label": "Marketing coordinator",
-        "score": -0.1607756038724787,
+        "score": -0.1607756038724788,
         "wage_delta": 6000.0,
-        "path_cost": 0.3736016908289853,
+        "path_cost": 0.3736016908289854,
         "target_risk": 0.45,
         "path": [
           "occ.customer_success",
@@ -6651,9 +6651,9 @@
       {
         "target": "occ.hr_generalist",
         "target_label": "HR generalist",
-        "score": -0.2922006514691511,
+        "score": -0.2922006514691512,
         "wage_delta": 3000.0,
-        "path_cost": 0.5065484775560943,
+        "path_cost": 0.5065484775560944,
         "target_risk": 0.3,
         "path": [
           "occ.content_writer",

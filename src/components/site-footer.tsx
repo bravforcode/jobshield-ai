@@ -44,7 +44,7 @@ const COLS = [
       },
       {
         label: "App (Next.js)",
-        href: "https://github.com/bravforcode/jobshield-ai/tree/main/apps/web",
+        href: "https://github.com/bravforcode/jobshield-ai/tree/main/src",
       },
     ],
   },

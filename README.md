@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JobShield AI
 
-## Getting Started
+Career mobility recommender for the Thai labour market. Pick a starting job → see top 5 ranked next moves with wage gap + skill bridges.
 
-First, run the development server:
+**Live:** https://jobsume.vercel.app · **Spec:** `src/DIRECTION.md` · **Pipeline:** `py/`
+
+## Stack
+
+| Layer | Tech |
+|-------|------|
+| App | Next.js 16 (App Router) + React 19 + TypeScript 5 + Bun 1.3 |
+| Styling | Tailwind CSS 4 + shadcn/ui (Radix) + motion + next-themes |
+| Charts | Recharts (OLS wage radar) |
+| Data | Python 3.12 + uv — PPMI graph → Dijkstra L1 → Rank L2 → Centrality/OLS |
+| Deploy | Vercel (webpack build, `sin1`) |
+
+## Quickstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. Install
+bun install
+
+# 2. Build artifacts (first time or after py/ changes)
+uv run --project py python -m jobshield.data.mock_data
+uv run --project py python -m jobshield.cli.build --mock --out data/artifacts.json
+
+# 3. Dev
+bun run dev        # http://localhost:3000
+bun run typecheck  # tsc --noEmit
+bun run lint       # biome check src
+bun run build      # bunx next build --webpack
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+# Python checks
+uv run --directory py pytest -q   # 145 tests
+uv run --directory py ruff check .
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | What |
+|-------|------|
+| `/` | Landing — hero + live wage radar + architecture + features |
+| `/recommend` | Recommender — source picker + ranked 5 + radar tab |
+| `/wage-radar` | Deep radar — scatter + OLS line + table |
+| `/mechanism` | 6-layer explainer (PPMI → centrality) |
+| `GET /api/health` | `{status:"ok"}` |
+| `GET /api/stats` | `{occupations, skills, edges, sources}` |
+| `GET /api/occupations` | 18 occupations (bilingual labels) |
+| `GET /api/occupations/[code]` | Single occupation |
+| `GET /api/recommend?source=&topN=` | Ranked recommendations |
+| `GET /api/wage-radar` | Radar rows with gap ratios |
 
-## Learn More
+## Data
 
-To learn more about Next.js, take a look at the following resources:
+`data/artifacts.json` is the build artifact (18 occ / 46 skills / 119 edges). Regenerate after editing `py/` or `data/mock/`. Hand-authored postings → mock, not real Thai LMI (see `/mechanism`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Push to `main` → Vercel auto-deploy. Or `vercel --prod --yes` locally.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

@@ -11,25 +11,25 @@ RUN uv sync --frozen --project py
 RUN uv run --project py python -m jobshield.data.mock_data && \
     uv run --project py python -m jobshield.cli.build --mock --out data/artifacts.json
 
-# ---- Bun base (TS) ----
+# ---- Bun base (Next.js) ----
 FROM oven/bun:1 AS bun-base
 WORKDIR /app
-COPY package.json bun.lock tsconfig.base.json biome.json ./
-COPY ts/ ./ts/
+COPY package.json bun.lock tsconfig.json biome.json next.config.ts postcss.config.mjs components.json ./
+COPY src/ ./src/
+COPY public/ ./public/
+COPY data/artifacts.json ./data/artifacts.json
 RUN bun install --frozen-lockfile
-RUN bun run build:web
-RUN bun test
-RUN bun run lint
+RUN bunx next build --webpack
 
-# ---- Final image (Bun serves the API + static web) ----
+# ---- Final image ----
 FROM oven/bun:1-slim
 WORKDIR /app
 COPY --from=py-base /app/data/artifacts.json ./data/artifacts.json
 COPY --from=py-base /app/data/mock ./data/mock
+COPY --from=bun-base /app/.next ./.next
 COPY --from=bun-base /app/node_modules ./node_modules
-COPY --from=bun-base /app/ts ./ts
-COPY package.json bun.lock tsconfig.base.json biome.json ./
-ENV JOBSHIELD_ARTIFACTS=data/artifacts.json
+COPY --from=bun-base /app/public ./public
+COPY package.json next.config.ts ./
 ENV PORT=3000
 EXPOSE 3000
-CMD ["bun", "run", "ts/api/src/index.ts"]
+CMD ["bun", "run", "start"]
