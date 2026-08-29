@@ -1,0 +1,10 @@
+{
+  "name": "JobShield AI",
+  "short_name": "JobShield",
+  "description": "Thai occupation mobility recommender",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c10",
+  "theme_color": "#ff5b3e",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0c10"/>
+  <rect x="48" y="48" width="48" height="48" rx="12" fill="#ff5b3e"/>
+  <text x="112" y="82" fill="#e8e3d6" font-family="sans-serif" font-size="28" font-weight="600">JobShield AI — v2</text>
+  <text x="48" y="220" fill="#e8e3d6" font-family="sans-serif" font-size="56" font-weight="700">Where you can go next</text>
+  <text x="48" y="280" fill="#e8e3d6" font-family="sans-serif" font-size="56" font-weight="700">in the Thai labour market.</text>
+  <text x="48" y="340" fill="#9b9ea8" font-family="sans-serif" font-size="22">PPMI skill graph · Dijkstra Layer-1 · Rank Layer-2 · Wage Radar</text>
+</svg>

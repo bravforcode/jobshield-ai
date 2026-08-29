@@ -1,10 +1,11 @@
 "use client";
 
-import { BookOpen, ChartLine, Route as RouteIcon } from "lucide-react";
+import { BookOpen, ChartLine, Copy, Route as RouteIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
+import { toast } from "sonner";
 import { RecommendationsList } from "@/components/recommendations-list";
 import { SourcePicker } from "@/components/source-picker";
 import { Badge } from "@/components/ui/badge";
@@ -61,16 +62,26 @@ export function RecommenderClient({ occupations, initialRecommendations, wageRad
   const occMap = React.useMemo(() => new Map(occupations.map((o) => [o.code, o])), [occupations]);
   const sourceOcc = occMap.get(source);
 
+  function copyLink() {
+    const url = `${window.location.origin}/recommend?source=${source}`;
+    navigator.clipboard.writeText(url).then(() => toast.success("Link copied"));
+  }
+
   return (
     <div className="mx-auto max-w-[1240px] px-4 py-10 sm:px-6">
       <div className="mb-8 flex flex-col gap-4">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            Recommender
-          </p>
-          <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-            Pick a starting job. See ranked next moves.
-          </h1>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+              Recommender
+            </p>
+            <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+              Pick a starting job. See ranked next moves.
+            </h1>
+          </div>
+          <Button variant="outline" size="sm" onClick={copyLink} className="hidden sm:inline-flex">
+            <Copy /> Copy link
+          </Button>
         </div>
         <SourcePicker occupations={occupations} selected={source} onChange={setSource} />
       </div>

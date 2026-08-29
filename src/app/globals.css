@@ -147,3 +147,9 @@
 .radar-halo {
   animation: radar-pulse 2.4s ease-in-out infinite;
 }
+
+@media print {
+  header, footer { display: none !important; }
+  body { background: white !important; color: black !important; }
+  a::after { content: " (" attr(href) ")"; font-size: 10px; }
+}

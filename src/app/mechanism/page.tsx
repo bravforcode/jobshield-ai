@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Mechanism",
+  description:
+    "Six layers: PPMI skill graph → occupation distance → transition → Dijkstra L1 → Rank L2 → centrality/OLS.",
+};
 
 const SECTIONS = [
   {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -13,6 +14,12 @@ import { getArtifacts } from "@/lib/data.server";
 import { formatThb } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Wage Radar",
+  description:
+    "OLS wage vs degree centrality — which occupations are underpaid relative to network position.",
+};
 
 export default function WageRadarPage() {
   const { wageRadar } = getArtifacts();

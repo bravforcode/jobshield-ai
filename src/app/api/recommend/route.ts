@@ -1,7 +1,20 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getArtifacts, getRecommendations } from "@/lib/data.server";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
+/**
+ * GET /api/recommend?source=occ.xxx&topN=5
+ * topN is clamped 1..50 (default 5). Rate-limited 60/min per IP.
+ */
 export async function GET(req: NextRequest) {
+  const ip = getClientIp(req);
+  const rl = checkRateLimit(ip);
+  if (!rl.ok) {
+    return NextResponse.json(
+      { error: "rate limited" },
+      { status: 429, headers: { "retry-after": String(rl.retryAfter ?? 60) } },
+    );
+  }
   const url = new URL(req.url);
   const source = url.searchParams.get("source") ?? "";
   const topNParam = url.searchParams.get("topN");

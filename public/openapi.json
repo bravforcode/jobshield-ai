@@ -1,0 +1,15 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "JobShield AI", "version": "2.0.0", "description": "Thai occupation mobility recommender" },
+  "servers": [{ "url": "https://jobsume.vercel.app" }],
+  "paths": {
+    "/api/health": { "get": { "summary": "Health", "responses": { "200": { "description": "ok" } } } },
+    "/api/stats": { "get": { "summary": "Corpus stats", "responses": { "200": { "description": "stats" } } } },
+    "/api/occupations": { "get": { "summary": "List occupations", "responses": { "200": { "description": "list" } } } },
+    "/api/occupations/{code}": { "get": { "summary": "Get occupation", "parameters": [{ "name": "code", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "occupation" }, "404": { "description": "not found" } } } },
+    "/api/recommend": { "get": { "summary": "Recommend", "parameters": [{ "name": "source", "in": "query", "required": true, "schema": { "type": "string" } }, { "name": "topN", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 50 } }], "responses": { "200": { "description": "recommendations" }, "400": { "description": "bad request" }, "429": { "description": "rate limited" } } } },
+    "/api/wage-radar": { "get": { "summary": "Wage radar rows", "responses": { "200": { "description": "rows" } } } },
+    "/api/yen": { "get": { "summary": "Yen K paths", "parameters": [{ "name": "source", "in": "query", "required": true, "schema": { "type": "string" } }, { "name": "target", "in": "query", "schema": { "type": "string" } }, { "name": "k", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 5 } }], "responses": { "200": { "description": "paths" } } } },
+    "/api/validation": { "get": { "summary": "Thresholds", "responses": { "200": { "description": "thresholds" } } } }
+  }
+}

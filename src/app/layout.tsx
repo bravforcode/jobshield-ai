@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -37,13 +38,18 @@ export const metadata: Metadata = {
     title: "JobShield AI",
     description: "Where can you go next in the Thai labour market, and why.",
     type: "website",
+    images: [{ url: "/og.svg", width: 1200, height: 630, alt: "JobShield AI" }],
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="min-h-screen bg-background font-sans antialiased">
+      <head>
+        <JsonLd />
+      </head>
+      <body className="min-h-screen bg-background font-sans antialiased print:bg-white">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
