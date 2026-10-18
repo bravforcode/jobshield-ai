@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Python deps (frozen)
         working-directory: py
-        run: uv sync --frozen
+        run: uv sync --frozen --extra dev
 
       - name: Generate mock data (deterministic)
         working-directory: py

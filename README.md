@@ -4,6 +4,8 @@ Career mobility recommender for the Thai labour market. Pick a starting job → 
 
 **Live:** https://jobsume.vercel.app · **Spec:** `src/DIRECTION.md` · **Pipeline:** `py/`
 
+> **Status:** portfolio project. The recommender runs on a hand-authored mock dataset (18 occupations, 46 skills, 119 edges), not real Thai labour-market data; see `/mechanism` for what that does and does not support. CI runs the Python suite (pytest, ruff) and the Next.js typecheck, lint, build and API smoke test.
+
 ## Stack
 
 | Layer | Tech |

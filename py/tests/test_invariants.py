@@ -7,17 +7,21 @@ exist separately from the per-module unit tests because they cross layers.
 from __future__ import annotations
 
 import math
+from pathlib import Path
 
 from jobshield.cli.build import build_pipeline
 from jobshield.path import edge_cost, normalize_edge_weights
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+MOCK_DIR = REPO_ROOT / "data" / "mock"
 
 
 def test_ppmi_is_always_nonnegative() -> None:
     """Spec §3.2: `ppmi = max(pmi, 0)` — edges with sub-independence are dropped."""
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     for w in artifacts.skill_graph.edges.values():
         assert w >= 0.0, f"PPMI edge weight {w} is negative"
@@ -26,9 +30,9 @@ def test_ppmi_is_always_nonnegative() -> None:
 def test_skill_distance_in_unit_interval() -> None:
     """Spec §4.2: distance = 1 - clamp01(similarity) — must be in [0, 1]."""
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     for e in artifacts.transition_graph.edges:
         assert 0.0 <= e.skill_distance <= 1.0, (
@@ -42,9 +46,9 @@ def test_edge_cost_nonnegativity_is_global_invariant() -> None:
     Verify across the full graph, not just the test fixture.
     """
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     # Already normalized by recommend_career_paths, but re-assert.
     normalize_edge_weights(artifacts.transition_graph, artifacts.risk_scores)
@@ -73,9 +77,9 @@ def test_wage_term_telescopes_to_target_minus_source() -> None:
 def test_skill_graph_is_undirected_pairs() -> None:
     """Spec §3.2: edge key = sorted skill pair. has_edge(s1, s2) == has_edge(s2, s1)."""
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     sg = artifacts.skill_graph
     for a, b in [(s, t) for (s, t) in sg.edges]:
@@ -88,9 +92,9 @@ def test_skill_graph_is_undirected_pairs() -> None:
 def test_centrality_degree_normalized_to_max_1() -> None:
     """Spec §6.2: degree_centrality uses max-degree normalization -> max == 1.0."""
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     cent = artifacts.centrality.degree
     if cent:
@@ -101,9 +105,9 @@ def test_centrality_degree_normalized_to_max_1() -> None:
 def test_centrality_betweenness_normalized_to_max_1() -> None:
     """Spec §6.2: betweenness normalized so max is 1.0 (or 0 if disconnected)."""
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     cent = artifacts.centrality.betweenness
     if cent:
@@ -117,9 +121,9 @@ def test_dijkstra_path_cost_is_finite_for_connected_pairs() -> None:
     from jobshield.path import dijkstra_from_source
 
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     g = artifacts.transition_graph
     for source in g.nodes:

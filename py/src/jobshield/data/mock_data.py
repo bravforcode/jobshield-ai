@@ -348,8 +348,8 @@ def write_to(data_dir: Path) -> dict[str, Path]:
 
 
 if __name__ == "__main__":
-    # Resolve relative to repo root (C:\jobsume), not the package directory.
-    # Path: data/mock_data.py -> data/ -> jobshield/ -> src/ -> py/ -> jobsume/
+    # Resolve relative to the repo root, not the package directory.
+    # Path: data/mock_data.py -> data/ -> jobshield/ -> src/ -> py/ -> repo root
     repo_root = Path(__file__).resolve().parents[4]
     paths = write_to(repo_root / "data" / "mock")
     for name, p in paths.items():
