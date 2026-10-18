@@ -17,6 +17,12 @@ from pathlib import Path
 
 import pytest
 
+pytest.skip(
+    "Bun API (ts/api) was replaced by Next.js route handlers; HTTP checks now run "
+    "as the smoke step in .github/workflows/ci.yml. Port this suite to Next.js to re-enable.",
+    allow_module_level=True,
+)
+
 REPO = Path(__file__).resolve().parents[2]
 ARTIFACTS = REPO / "data" / "artifacts.json"
 

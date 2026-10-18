@@ -1,25 +1,30 @@
 """Sanity checks for the mock data loaders (spec §9)."""
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from jobshield.data import load_postings, load_risk_scores, load_wage_data
 from jobshield.types import JobPosting, OccupationCode
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+MOCK_DIR = REPO_ROOT / "data" / "mock"
+
 
 @pytest.fixture(scope="module")
 def postings() -> list[JobPosting]:
-    return load_postings("C:/jobsume/data/mock/job_postings.json")
+    return load_postings(str(MOCK_DIR / "job_postings.json"))
 
 
 @pytest.fixture(scope="module")
 def wage() -> dict[OccupationCode, object]:
-    return load_wage_data("C:/jobsume/data/mock/wage_data.json")
+    return load_wage_data(str(MOCK_DIR / "wage_data.json"))
 
 
 @pytest.fixture(scope="module")
 def risk() -> dict[OccupationCode, float]:
-    return load_risk_scores("C:/jobsume/data/mock/risk_scores.json")
+    return load_risk_scores(str(MOCK_DIR / "risk_scores.json"))
 
 
 def test_postings_total_meets_mvp_floor(postings: list[JobPosting]) -> None:

@@ -18,18 +18,22 @@ merely average for that graph.
 from __future__ import annotations
 
 import statistics
+from pathlib import Path
 
 import pytest
 
 from jobshield.cli.build import build_pipeline
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+MOCK_DIR = REPO_ROOT / "data" / "mock"
+
 
 @pytest.fixture(scope="module")
 def pipeline_artifacts():
     return build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
 
 
@@ -144,9 +148,9 @@ def test_validation_suite_catches_broken_graph():
     from jobshield.cli.build import build_pipeline
 
     artifacts, _ = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
     g = artifacts.transition_graph
     # Save originals for restore.

@@ -8,12 +8,15 @@ from pathlib import Path
 
 from jobshield.cli.build import build_pipeline
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+MOCK_DIR = REPO_ROOT / "data" / "mock"
+
 
 def test_full_pipeline_runs_and_produces_artifacts_dict() -> None:
     artifacts, per_source = build_pipeline(
-        "C:/jobsume/data/mock/job_postings.json",
-        "C:/jobsume/data/mock/wage_data.json",
-        "C:/jobsume/data/mock/risk_scores.json",
+        str(MOCK_DIR / "job_postings.json"),
+        str(MOCK_DIR / "wage_data.json"),
+        str(MOCK_DIR / "risk_scores.json"),
     )
 
     payload = artifacts.to_dict()
@@ -30,29 +33,27 @@ def test_full_pipeline_runs_and_produces_artifacts_dict() -> None:
             assert r["target"] != code, f"{code} recommends itself"
 
 
-def test_cli_exits_zero_and_writes_artifacts_json() -> None:
+def test_cli_exits_zero_and_writes_artifacts_json(tmp_path: Path) -> None:
     """End-to-end smoke: the CLI must run, write artifacts.json, exit 0."""
-    # Use the venv's Python so `jobshield` is importable.
-    venv_python = Path("C:/jobsume/py/.venv/Scripts/python.exe")
-    cmd_python = str(venv_python) if venv_python.exists() else sys.executable
+    out_path = tmp_path / "artifacts.json"
     result = subprocess.run(
         [
-            cmd_python,
+            sys.executable,
             "-m",
             "jobshield.cli.build",
             "--mock",
             "--out",
-            "C:/jobsume/data/_test_artifacts.json",
+            str(out_path),
         ],
         capture_output=True,
         text=True,
-        cwd="C:/jobsume/py",
+        cwd=str(REPO_ROOT / "py"),
     )
     assert result.returncode == 0, (
         f"CLI failed (exit {result.returncode}):\nstdout={result.stdout}\nstderr={result.stderr}"
     )
     # The output JSON must contain the canonical fields.
-    with open("C:/jobsume/data/_test_artifacts.json", encoding="utf-8") as f:
+    with open(out_path, encoding="utf-8") as f:
         data = json.loads(f.read())
     assert "skill_graph" in data
     assert "transition_graph" in data
